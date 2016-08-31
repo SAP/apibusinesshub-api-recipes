@@ -1,0 +1,12 @@
+#Password=<< Existing password/certificate removed on Export >>
+#
+#Fri Jul 08 06:42:11 UTC 2016
+Type=HTTP
+Authentication=BasicAuthentication
+trustAll=true
+Name=apiportal
+WebIDEEnabled=true
+CloudConnectorVersion=2
+URL=https\://yourapiportaltenancy.ondemand.com
+ProxyType=Internet
+User=scnuseridwithapiportaladminrole
