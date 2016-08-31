@@ -1,0 +1,4 @@
+#Url Masking
+
+Url masking means hiding the actual target server domain with SAP HANA Cloud Platform, API management runtime APIProxy domain. There are many ways in which it can be achieved. In this scenario we are taking a simple [JavaScript](https://help.hana.ondemand.com/apim_od/frameset.htm?5b63ed7782ab4b4ea96bf84119059039.html) based approach to replace all the target host references with the APIProxy reference. This would work well for simple APIProxies (esp in case the response data is not huge) created with target Url instead of being linked to the API Provider.
+In this example we will also handle the masking of the target base path with the proxy base path. The base path is the URI fragment that follows the host in the URL as specified during the proxy creation and for the target endpoint, the target endpoint base path is the base path of the target url as specified during the proxy creation. 
