@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndPoint default="true">
+    <name>default</name>
+    <base_path>/v1/gwdemo/cors</base_path>
+    <properties/>
+    <routeRules>
+        <routeRule>
+            <name>default</name>
+            <targetEndPointName>default</targetEndPointName>
+            <sequence>2</sequence>
+            <faultRules/>
+        </routeRule>
+        <routeRule>
+            <name>noroute</name>
+            <conditions>request.verb == "OPTIONS" </conditions>
+            <sequence>1</sequence>
+            <faultRules/>
+        </routeRule>
+    </routeRules>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+        <response>
+            <isRequest>true</isRequest>
+            <steps>
+                <step>
+                    <policy_name>setCORS</policy_name>
+                    <condition></condition>
+                    <sequence>1</sequence>
+                </step>
+            </steps>
+        </response>
+    </postFlow>
+    <conditionalFlows/>
+</ProxyEndPoint>

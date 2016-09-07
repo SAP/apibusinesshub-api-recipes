@@ -1,0 +1,14 @@
+<AssignMessage async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+	 <Add>
+        <Headers>
+            <Header name="Access-Control-Allow-Origin">*</Header>
+            <Header name="Access-Control-Allow-Headers">set-cookie, origin, accept, maxdataserviceversion, x-csrf-token, apikey, dataserviceversion, accept-language, x-http-method,content-type,X-Requested-With</Header>
+            <Header name="Access-Control-Max-Age">3628800</Header>
+            <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
+          	<Header name="Access-Control-Expose-Headers">set-cookie, x-csrf-token, x-http-method</Header>	
+             
+        </Headers>
+    </Add>
+	<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+	<AssignTo createNew="false" type="response">response</AssignTo>
+</AssignMessage>
