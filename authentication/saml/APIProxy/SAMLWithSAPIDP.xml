@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy>
+    <name>SAMLWithSAPIDP</name>
+    <title>SAML flow with SAP ID Service</title>
+    <description>API Proxy describing the SAML with Form authentication flow with SAP ID Service.</description>
+    <service_code>REST</service_code>
+    <life_cycle>
+        <changed_by>I034805</changed_by>
+        <created_by>I034805</created_by>
+    </life_cycle>
+    <proxyEndPoints>
+        <proxyEndPoint>
+            <proxyEndPointName>default</proxyEndPointName>
+        </proxyEndPoint>
+    </proxyEndPoints>
+    <targetEndPoints>
+        <targetEndPoint>default</targetEndPoint>
+    </targetEndPoints>
+    <policies>
+        <policy type="Javascript">handleSaml</policy>
+    </policies>
+    <fileResources>
+        <fileResource type="js">config</fileResource>
+        <fileResource type="js">saml</fileResource>
+    </fileResources>
+</APIProxy>
