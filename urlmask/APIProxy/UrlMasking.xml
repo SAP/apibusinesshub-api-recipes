@@ -5,8 +5,8 @@
     <description>API Proxy showcasing the url masking, wherein the target server host and path information from the response is replaced with the proxy endpoint host and path.</description>
     <service_code>REST</service_code>
     <life_cycle>
-        <changed_by>I034805</changed_by>
-        <created_by>I034805</created_by>
+        <changed_by>I</changed_by>
+        <created_by>I</created_by>
     </life_cycle>
     <proxyEndPoints>
         <proxyEndPoint>
