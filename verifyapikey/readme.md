@@ -16,7 +16,3 @@ The APP key can be passed by the application developer either in the header, que
 | [VerifyAPIKeyQuery](./VerifyAPIKeyQuery/APIProxy)      | API Proxy Zip Bundle where in the API Key is passed in the query param  |
 | [VerifyAPIKeyHeader](./VerifyAPIKeyHeader/APIProxy)      | API Proxy Zip Bundle where in the API Key is passed in the header param  |
 
-##Pre-requisite
-
-1. User in [SAP Gateway](http://scn.sap.com/docs/DOC-40986) system
-2. Create application so that the APP key can be passed while accessing the API Proxy
