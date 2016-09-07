@@ -1,0 +1,14 @@
+<RaiseFault async="true" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+	<!-- Defines the response message returned to the requesting client -->
+	<FaultResponse>
+		<Set>
+			<!-- Sets or overwrites HTTP headers in the respone message -->
+			<Headers/>
+			<Payload contentType="application/json" variablePrefix="@" variableSuffix="#">{"code": "FORBIDDEN_PARAMETER"}</Payload> 
+			<StatusCode>403</StatusCode>
+			<!-- sets the reason phrase of the response -->
+			<ReasonPhrase>Forbidden</ReasonPhrase>
+		</Set>
+	</FaultResponse>
+	<IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>
