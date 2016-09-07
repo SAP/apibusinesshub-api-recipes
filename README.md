@@ -8,14 +8,15 @@ An *API Proxy* is a representation of a HTTP-based service that abstracts the ac
 
 ##Before Starting
 
-Sign up [here](https://hcp.sap.com/try.html) for a free trial of *SAP HANA Cloud Platform*.
+* Sign up [here](https://hcp.sap.com/try.html) for a free trial of *SAP HANA Cloud Platform*.
 
-Sign up [here](http://scn.sap.com/community/api-management/blog/2016/02/02/free-trial-of-sap-api-management-on-hana-cloud-platform-is-available-now) for a free trial of *SAP HANA Cloud Platform, API management*.
+* Sign up [here](http://scn.sap.com/community/api-management/blog/2016/02/02/free-trial-of-sap-api-management-on-hana-cloud-platform-is-available-now) for a free trial of *SAP HANA Cloud Platform, API management*.
 
-Refer to the [SCN blog] (http://scn.sap.com/docs/DOC-71207) for an Overview of *SAP HANA Cloud Platform, API management*.
+* Refer to the [SCN blog] (http://scn.sap.com/docs/DOC-71207) for an Overview of *SAP HANA Cloud Platform, API management*.
 
-Refer to the [SCN blog](http://scn.sap.com/community/api-management/blog/2016/02/10/how-to-use-sap-api-management-on-hcp-trial) for *Getting Started on SAP HANA Cloud Platform, API management*.
+##Importing API Proxy Samples
 
+API Proxies samples are available in each sample folder under the sub folder *APIProxy*. The sample shared are in the API Proxy structure of SAP HCP, API management which is described in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?4dfd54a7546c42cfb8dd157ab1355011.html). Download or Clone the APIProxy and create a zip file from APIProxy.
 Refer to the [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html) information on how to import API Proxies listed in this repository into your API Management tenant.
 
 ##Available Samples List
