@@ -1,0 +1,5 @@
+ <!--Specify in the APIKey element where to look for the variable containing the api key--> 
+<VerifyAPIKey async='true' continueOnError='true' enabled='false' 
+xmlns='http://www.sap.com/apimgmt'>
+	<APIKey ref='request.queryparam.apikey'/>
+</VerifyAPIKey>

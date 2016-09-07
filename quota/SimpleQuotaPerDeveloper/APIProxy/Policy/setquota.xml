@@ -1,0 +1,10 @@
+<!-- can be used to configure the number of request messages that an app is allowed to submit to an API over a course of unit time -->
+<Quota async="false" continueOnError="false" enabled="true" type="calendar" xmlns="http://www.sap.com/apimgmt">
+    <Identifier ref="verifyapikey.checkapikey.client_id" />
+    <Allow count="5"/>
+ 	<Interval>15</Interval>
+	<Distributed>true</Distributed>
+ 	<StartTime>2015-2-11 12:00:00</StartTime>
+	<Synchronous>true</Synchronous>
+ 	<TimeUnit>minute</TimeUnit>
+</Quota>
