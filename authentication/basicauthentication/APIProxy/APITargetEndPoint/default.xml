@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndPoint>
+    <name>default</name>
+    <url>https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/</url>
+    <provider_id>NONE</provider_id>
+    <isDefault>true</isDefault>
+    <properties/>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps>
+                <step>
+                    <policy_name>assignuserdetails</policy_name>
+                    <condition></condition>
+                    <sequence>1</sequence>
+                </step>
+                <step>
+                    <policy_name>setcredential</policy_name>
+                    <condition></condition>
+                    <sequence>2</sequence>
+                </step>
+            </steps>
+        </request>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+    </postFlow>
+    <conditionalFlows/>
+</TargetEndPoint>
