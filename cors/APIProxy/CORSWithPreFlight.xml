@@ -5,8 +5,8 @@
     <description>API Proxy describing the CORS handling with Prefligh</description>
     <service_code>REST</service_code>
     <life_cycle>
-        <changed_by>I034805</changed_by>
-        <created_by>I034805</created_by>
+        <changed_by>I</changed_by>
+        <created_by>I</created_by>
     </life_cycle>
     <proxyEndPoints>
         <proxyEndPoint>
