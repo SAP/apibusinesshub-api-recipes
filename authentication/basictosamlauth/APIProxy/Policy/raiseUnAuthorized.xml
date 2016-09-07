@@ -1,0 +1,17 @@
+<!-- can be used to create custom messages in case of an error condition -->
+<RaiseFault async="true" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+	<!-- Defines the response message returned to the requesting client -->
+	<FaultResponse>
+		<Set>
+			<!-- Sets or overwrites HTTP headers in the respone message -->
+			<Headers>
+			    <Header name="WWW-Authenticate">Basic realm="User Visible Realm"</Header>
+			 </Headers>
+			<Payload contentType="application/json" variablePrefix="@" variableSuffix="#">{"code": "AUTHENTICATION_FAILURE","message":"Either user credential not passed or in valid credential passed"}</Payload>
+			<StatusCode>401</StatusCode>
+			<!-- sets the reason phrase of the response -->
+			<ReasonPhrase>UnAuthorized</ReasonPhrase>
+		</Set>
+	</FaultResponse>
+	<IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

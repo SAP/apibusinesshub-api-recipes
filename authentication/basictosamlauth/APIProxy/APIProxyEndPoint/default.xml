@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndPoint default="true">
+    <name>default</name>
+    <base_path>/core/api/v1/rest/basictosaml/user</base_path>
+    <properties/>
+    <routeRules>
+        <routeRule>
+            <name>default</name>
+            <targetEndPointName>default</targetEndPointName>
+            <sequence>1</sequence>
+            <faultRules/>
+        </routeRule>
+    </routeRules>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps>
+                <step>
+                    <policy_name>raiseUnAuthorized</policy_name>
+                    <condition>request.header.Authorization = null or request.header.Authorization = ""</condition>
+                    <sequence>1</sequence>
+                </step>
+                <step>
+                    <policy_name>readUserCredential</policy_name>
+                    <condition></condition>
+                    <sequence>2</sequence>
+                </step>
+            </steps>
+        </request>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+    </postFlow>
+    <conditionalFlows/>
+</ProxyEndPoint>
