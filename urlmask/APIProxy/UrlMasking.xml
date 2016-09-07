@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy>
+    <name>UrlMasking</name>
+    <title>UrlMasking</title>
+    <description>API Proxy showcasing the url masking, wherein the target server host and path information from the response is replaced with the proxy endpoint host and path.</description>
+    <service_code>REST</service_code>
+    <life_cycle>
+        <changed_by>I034805</changed_by>
+        <created_by>I034805</created_by>
+    </life_cycle>
+    <proxyEndPoints>
+        <proxyEndPoint>
+            <proxyEndPointName>default</proxyEndPointName>
+        </proxyEndPoint>
+    </proxyEndPoints>
+    <targetEndPoints>
+        <targetEndPoint>default</targetEndPoint>
+    </targetEndPoints>
+    <policies>
+        <policy type="Javascript">setProxyHost</policy>
+        <policy type="Javascript">maskUrlFromResponse</policy>
+    </policies>
+    <fileResources>
+        <fileResource type="js">util</fileResource>
+        <fileResource type="js">proxyHost</fileResource>
+        <fileResource type="js">urlMask</fileResource>
+    </fileResources>
+</APIProxy>
