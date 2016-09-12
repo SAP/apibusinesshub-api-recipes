@@ -6,4 +6,7 @@ In SAP HANA Cloud Platform, API management the [JavaScript](https://help.hana.on
 
 In case an error is detected then [Raise Fault](https://help.hana.ondemand.com/apim_od/frameset.htm?c7f2e8d9de4249cfa8cc2655ebd4878b.html) policy could be used to return 403 forbidden status code to the end user.
 
+# How to use the sample
 
+* Click on [SQLThreatProtection.zip](./SQLThreatProtection.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
+* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
