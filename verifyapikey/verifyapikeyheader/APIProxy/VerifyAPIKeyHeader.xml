@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy>
+    <name>VerifyAPIKeyHeader</name>
+    <title>VerifyAPIKeyHeader</title>
+    <description>API Proxy Describing the verify api key policy. The apikey is passed in the header parameter</description>
+    <service_code>REST</service_code>
+    <life_cycle>
+        <changed_by>I</changed_by>
+        <created_by>I</created_by>
+    </life_cycle>
+    <proxyEndPoints>
+        <proxyEndPoint>
+            <proxyEndPointName>default</proxyEndPointName>
+        </proxyEndPoint>
+    </proxyEndPoints>
+    <targetEndPoints>
+        <targetEndPoint>default</targetEndPoint>
+    </targetEndPoints>
+    <policies>
+        <policy type="VerifyAPIKey">checkapikey</policy>
+    </policies>
+    <fileResources/>
+</APIProxy>
