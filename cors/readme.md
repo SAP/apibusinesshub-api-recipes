@@ -19,7 +19,7 @@ In case the underlying target service doesn't support OPTIONS http method and th
 
 In this example, the SAP Gateway [Demo Service](http://scn.sap.com/docs/DOC-31221) has been used. To register for SAP Gateway System access click [here](http://scn.sap.com/docs/DOC-40986)
 
-# Importing API Proxy
+# How to use the sample
 
 * Click on [CORS.zip](./CORS.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
-* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html)
+* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
