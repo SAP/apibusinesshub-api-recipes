@@ -1,0 +1,8 @@
+<Quota async="false" continueOnError="false" enabled="true" type="calendar" xmlns="http://www.sap.com/apimgmt">
+ 	<Allow count="5"/>
+ 	<Interval>15</Interval>
+	<Distributed>true</Distributed>
+ 	<StartTime>2015-2-11 12:00:00</StartTime>
+	<Synchronous>true</Synchronous>
+ 	<TimeUnit>minute</TimeUnit>
+</Quota>

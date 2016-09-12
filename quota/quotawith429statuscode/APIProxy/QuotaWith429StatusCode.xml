@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy>
+    <name>QuotaWith429StatusCode</name>
+    <title>QuotaWith429StatusCode</title>
+    <description>API Proxy for simple quota, which allows 5 calls per 15 minute per developer with error handling. Setting 429 status code when quota expires</description>
+    <service_code>REST</service_code>
+    <life_cycle>
+        <changed_by>I</changed_by>
+        <created_by>I</created_by>
+    </life_cycle>
+    <proxyEndPoints>
+        <proxyEndPoint>
+            <proxyEndPointName>default</proxyEndPointName>
+        </proxyEndPoint>
+    </proxyEndPoints>
+    <targetEndPoints>
+        <targetEndPoint>default</targetEndPoint>
+    </targetEndPoints>
+    <policies>
+        <policy type="VerifyAPIKey">checkapikey</policy>
+        <policy type="Quota">setquota</policy>
+        <policy type="RaiseFault">handlequotaerror</policy>
+    </policies>
+    <fileResources/>
+</APIProxy>

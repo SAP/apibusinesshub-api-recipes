@@ -1,0 +1,15 @@
+<RaiseFault async="true" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+	<!-- Defines the response message returned to the requesting client -->
+	<FaultResponse>
+		<Set>
+			<!-- Sets or overwrites HTTP headers in the respone message -->
+			<Headers>
+			    <Header name="Retry-After">{ratelimit.setquota.expiry.time}</Header>
+			    </Headers>
+			<Payload contentType="text/plain">Your quota exceeded </Payload> <StatusCode>429</StatusCode>
+			<!-- sets the reason phrase of the response -->
+			<ReasonPhrase>Too many Requests</ReasonPhrase>
+		</Set>
+	</FaultResponse>
+	<IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>
