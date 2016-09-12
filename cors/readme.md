@@ -18,3 +18,9 @@ Typically the preflight request is triggered by the browser with http method OPT
 In case the underlying target service doesn't support OPTIONS http method and then routerule can be used to ensure that the OPTIONS call is not routed to the target services but then the response with CORS header is returned by the SAP API Management. The custom header can be returned using the [Assign Message](https://help.hana.ondemand.com/apim_od/frameset.htm?523efe6d0a9d43beb5d62ad07937578f.html) policy.
 
 In this example, the SAP Gateway [Demo Service](http://scn.sap.com/docs/DOC-31221) has been used. To register for SAP Gateway System access click [here](http://scn.sap.com/docs/DOC-40986)
+
+# Importing API Proxy
+
+* Click on [CORS.zip](./CORS.zip) 
+* Click on the "View Raw Button" or "Download" button to download the sample API Proxy zip
+* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](Refer to the [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html)
