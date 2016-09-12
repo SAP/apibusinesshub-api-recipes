@@ -15,11 +15,11 @@ Using the above mentioned elements we can have many flavors of the quota policy.
 
 Click [here](https://help.hana.ondemand.com/apim_od/frameset.htm?1f742c1e1a5c4a21bd83994071ddaea0.html) to read more details on the Quota policies
 
-## API Proxy Examples.
+## API Proxy Examples
 
 | Zip Name | Description        |
 | ------------- |:-------------:| 
 | [SimpleQuota](./simplequota)      | API Proxy Zip Bundle showcasing the quota policy of 5 calls per 15 mins  |
 | [SimpleQuotaPerDeveloper](./simplequotaperdeveloper)      | API Proxy Zip Bundle where in the quota policy of 5 calls per developer per 15 mins  |
-| [QuotaWith429StatusCode](./quotaWith429statusCode) | API Proxy Zip Bundle where in custom error message with status 429 status code is returned. This is as per the [RFC] (https://tools.ietf.org/html/rfc6585#page-3) |
+| [QuotaWith429StatusCode](./quotawith429statuscode) | API Proxy Zip Bundle where in custom error message with status 429 status code is returned. This is as per the [RFC] (https://tools.ietf.org/html/rfc6585#page-3) |
 
