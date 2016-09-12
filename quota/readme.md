@@ -15,7 +15,7 @@ Using the above mentioned elements we can have many flavors of the quota policy.
 
 Click [here](https://help.hana.ondemand.com/apim_od/frameset.htm?1f742c1e1a5c4a21bd83994071ddaea0.html) to read more details on the Quota policies
 
-## API Proxy Examples
+## API Proxy Examples.
 
 | Zip Name | Description        |
 | ------------- |:-------------:| 
