@@ -13,6 +13,6 @@ The APP key can be passed by the application developer either in the header, que
 
 | Zip Name | Description        |
 | ------------- |:-------------:| 
-| [VerifyAPIKeyQuery](./VerifyAPIKeyQuery/APIProxy)      | API Proxy Zip Bundle where in the API Key is passed in the query param  |
-| [VerifyAPIKeyHeader](./VerifyAPIKeyHeader/APIProxy)      | API Proxy Zip Bundle where in the API Key is passed in the header param  |
+| [VerifyAPIKeyQuery](./verifyapikeyquery/APIProxy)      | API Proxy Zip Bundle where in the API Key is passed in the query param  |
+| [VerifyAPIKeyHeader](./verifyapikeyheader/APIProxy)      | API Proxy Zip Bundle where in the API Key is passed in the header param  |
 
