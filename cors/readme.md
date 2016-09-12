@@ -21,6 +21,5 @@ In this example, the SAP Gateway [Demo Service](http://scn.sap.com/docs/DOC-3122
 
 # Importing API Proxy
 
-* Click on [CORS.zip](./CORS.zip) 
-* Click on the "View Raw Button" or "Download" button to download the sample API Proxy zip
+* Click on [CORS.zip](./CORS.zip) and then click on the "View Raw" Link or "Download" button to download the sample API Proxy zip
 * Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](Refer to the [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html)
