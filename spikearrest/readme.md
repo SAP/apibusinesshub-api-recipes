@@ -16,3 +16,9 @@ Quota policy consists of the following elements:-
 | Rate     | Rate to which to limit the traffic spikes. It can specified as number of traffic calls per second or per minute  | Spike Arrest of 2 calls per minute &lt;Rate&gt;2pm&lt;/Rate&gt;  Spike Arrest of 2 calls per sec &lt;Rate&gt;2ps&lt;/Rate&gt;|
 
 Click [here](https://help.hana.ondemand.com/apim_od/frameset.htm?bf441dc839034613b059cb508ad610f7.html) to view more details on the Spike Arrest policy.
+
+# How to use the sample
+
+* Click on [SpikeArrest.zip](./SpikeArrest.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
+* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
+
