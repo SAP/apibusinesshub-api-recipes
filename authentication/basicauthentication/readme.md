@@ -25,8 +25,8 @@ The Basic Authentication policy contains the following elements:-
 
 Click [here](https://help.hana.ondemand.com/apim_od/frameset.htm?693c0d1720644d57918ed77acc6a95ef.html) for more information on the Basic Authentication Policy
 
-## API Proxy Examples
+# How to use the sample
 
-| Folder Name | Description        |
-| ------------- |:-------------:| 
-| BasicAuthentication      | API Proxy Zip Bundle where in the service user credential to be used to connect to the target server can be passed via the policy named assignuserdetails and setcredential. Edit the assignuserdetails policy to pass in the service user name and password to be used for the connection  |
+* Click on [CORS.zip](./BasicAuthentication.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
+* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
+* Open the new imported API Proxy and then edit the assignuserdetails policy to pass in the service user name and password to be used for connecting to the target system.
