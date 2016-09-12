@@ -31,7 +31,11 @@ An *API Proxy* is a representation of a HTTP-based service that abstracts the ac
 ##API Proxy Structure Format
 
 API Proxies samples are available in each sample folder under the sub folder *APIProxy*. The sample shared are in the API Proxy structure of SAP HCP, API management which is described in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?4dfd54a7546c42cfb8dd157ab1355011.html). 
-Refer to the [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html) information on how to import API Proxies listed in this repository into your API Management tenant.
+
+##How to use the Sample
+
+* Click on the *.zip file available in each example folders  and then click on the "View Raw" Link or "Download" button to download the sample.
+* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
 
 
 ##License
