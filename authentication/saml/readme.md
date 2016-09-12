@@ -15,3 +15,9 @@ In this example, the SAP RealSpend Service from SAP HANA Cloud Platform has been
 In the config.js JavaScript, provide your SCN user credential which should be used to trigger the SAML flow.
 
 Click [here](https://help.hana.ondemand.com/apim_od/frameset.htm?5b63ed7782ab4b4ea96bf84119059039.html) for more details on JavaScript Policy
+
+# How to use the sample
+
+* Click on [SAML.zip](./SAML.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
+* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
+
