@@ -27,6 +27,6 @@ Click [here](https://help.hana.ondemand.com/apim_od/frameset.htm?693c0d1720644d5
 
 # How to use the sample
 
-* Click on [CORS.zip](./BasicAuthentication.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
+* Click on [BasicAuthentication.zip](./BasicAuthentication.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
 * Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
 * Open the new imported API Proxy and then edit the assignuserdetails policy to pass in the service user name and password to be used for connecting to the target system.
