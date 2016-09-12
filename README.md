@@ -28,7 +28,7 @@ An *API Proxy* is a representation of a HTTP-based service that abstracts the ac
 | [Url Masking](./urlmask) | Sample showcasing the masking/rewriting of the target system host, basepath and replacing it with the proxy endpoint host and base path. |
 | [Verify API Key](./verifyapikey) | Sample showcasing the enforcement and verification of API key based access to the API Proxy. Sample contains examples to pass the API key either as header parameter or as query parameter. |
 
-##API Proxy Samples File Format
+##API Proxy Structure Format
 
 API Proxies samples are available in each sample folder under the sub folder *APIProxy*. The sample shared are in the API Proxy structure of SAP HCP, API management which is described in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?4dfd54a7546c42cfb8dd157ab1355011.html). 
 Refer to the [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html) information on how to import API Proxies listed in this repository into your API Management tenant.
