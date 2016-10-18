@@ -6,6 +6,8 @@ This **SAP HANA Cloud Platform, API management repository** provides samples of 
 
 An *API Proxy* is a representation of a HTTP-based service that abstracts the actual proxy endpoint properties on one end and the actual target endpoint (the endpoint that is relevant for the end user to invoke) on the other end. Additionally it includes properties that describe the policies that can be invoked on the API. *Policies* define a set of rules (such as enforcing security and controlling traffic) that is applied on the API. More information on supported policies is available at [help.sap.com](https://help.hana.ondemand.com/apim_od/frameset.htm?7e4f3e590f164996994cddc8e48bf7f5.html)
 
+The graphical user interface of API Management is itself API-based, permitting extensions and customizations. A sample is given in the [*cloudportaltemplate*](./cloudportaltemplate) sub folder.
+
 ##Before Starting
 
 * Sign up [here](https://hcp.sap.com/try.html) for a free trial of *SAP HANA Cloud Platform*.
@@ -37,6 +39,9 @@ API Proxies samples are available in each sample folder under the sub folder *AP
 * Click on the *.zip file available in each example folders  and then click on the "View Raw" Link or "Download" button to download the sample.
 * Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
 
+##Custom API Developer Portal Sample
+
+[Cloud Portal Template](./cloudportaltemplate) in the *cloudportaltemplate* sub folder contains a sample website project that uses SAP HCP, Portal Service to build a custom API Management Developer Portal. This is helpful in scenarios where API creators want to give their developers features not present in the standard API Management Developer Portal.
 
 ##License
 These samples are provided as a starting point for your implementation and are provided without any warranty or support obligations.
