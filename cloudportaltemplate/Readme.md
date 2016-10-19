@@ -11,7 +11,7 @@ The template comprises of 3 Fiori applications as follows:
   3. Manage Subscriptions
 
 ### Get the Source Code
-Clone the Git [repository](https://github.wdf.sap.corp/apimngmt-demos/hcp-apimgmt-devportal-sample.git) or download the latest release.
+Clone the Git [repository](https://github.com/SAP/cloud-api-management-samples/tree/master/cloudportaltemplate) or download the latest release.
 
 ## Quick start guide
 #### Pre-requisites
