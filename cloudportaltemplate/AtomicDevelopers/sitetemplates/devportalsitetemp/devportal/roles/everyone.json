@@ -1,0 +1,15 @@
+{
+	"_version": "1.0",
+	"identification": {
+		"id": "Everyone",
+		"namespace": "",
+		"entityType": "role"
+	},
+	"payload": {
+		"catalogs": [{
+			"namespace": "",
+			"id": "hcp://devportalsitetemp/devportal/catalogs/defaultCatalog.json"
+		}],
+		"groups": []
+	}
+}

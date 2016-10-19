@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+	<title>test</title>
+	
+	<script src="/resources/sap-ui-core.js"
+			id="sap-ui-bootstrap"
+			data-sap-ui-libs="sap.m,sap.ui.commons"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-xx-bindingSyntax="complex">
+	</script>
+	
+	<script>
+	    jQuery.sap.registerModulePath("cp.templates.2ColumnPage", "");
+	    jQuery.sap.registerModulePath("sap.hana.uis.flp.control","/sdk/control");
+	    
+    	var oComp = sap.ui.getCore().createComponent({
+             name: "cp.templates.2ColumnPage",
+             id: "cp",
+             settings: {}
+        });
+        
+        var oContainer = new sap.ui.core.ComponentContainer({
+        	name: "pageTemplateContainer",
+        	settings: {},
+        	component: oComp
+        }).addStyleClass("pageTemplateContainer");
+        	
+        oContainer.placeAt('content');
+	</script>
+	
+</head>
+<body class='sapUiBody'>
+	<div id='content'></div>
+</body>
+</html>

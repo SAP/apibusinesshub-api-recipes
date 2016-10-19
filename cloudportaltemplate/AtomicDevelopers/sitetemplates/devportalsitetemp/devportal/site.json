@@ -1,0 +1,70 @@
+{
+	"_version": "1.0",
+	"identification": {
+		"id": "hcp://devportalsitetemp/devportal/site.json",
+		"namespace": "",
+		"layer": "vendor",
+		"title": "devportal",
+		"description": "",
+		"entityType": "site",
+		"i18n": ""
+	},
+	"payload": {
+		"homeApp": {
+			"semanticObject": "Home",
+			"action": "show"
+		},
+		"config": {
+			"ushellConfig": {
+				"modulePaths": {
+					"sap.ushell.apps.cpv2MenuPlugin": "/sap.ushell.apps.cpv2MenuPlugin",
+					"hideheaderplugin": "/sap/fiori/hideheaderplugin"
+				},
+				"bootstrapPlugins": {
+					"menuplugin": {
+						"component": "sap.ushell.apps.cpv2MenuPlugin"
+					},
+					"hideheaderplugin": {
+						"component": "hideHeaderPlugin",
+						 "url": "/sap/fiori/hideheaderplugin"
+					}
+				}
+			}
+		},
+		"sap.cloud.portal": {
+			"config": {
+				"icon": "devportalsitetemp/devportal/thumbnail.png",
+				"isOnline": "false",
+				"theme.id": "devportal1",
+				"theme.active": "[\"devportal1\",\"sap_bluecrystal\",\"sap_hcb\"]"
+			},
+			"availablePageTemplates": [
+				{
+					"namespace": "",
+					"id": "hcp://devportalsitetemp/devportal/pageTemplates/BlankPage/manifest.json"
+				},
+				{
+					"namespace": "",
+					"id": "hcp://devportalsitetemp/devportal/pageTemplates/LandingPage/manifest.json"
+				},
+				{
+					"namespace": "",
+					"id": "hcp://devportalsitetemp/devportal/pageTemplates/2ColumnPage/manifest.json"
+				},
+				{
+					"namespace": "",
+					"id": "hcp://devportalsitetemp/devportal/pageTemplates/FullWidth/manifest.json"
+				},
+				{
+					"namespace": "",
+					"id": "hcp://devportalsitetemp/devportal/pageTemplates/FullWidthPage/manifest.json"
+				},
+				{
+					"namespace": "",
+					"id": "hcp://devportalsitetemp/devportal/pageTemplates/2RowPage/manifest.json"
+				}
+			],
+			"_version": "1.2.0"
+		}
+	}
+}

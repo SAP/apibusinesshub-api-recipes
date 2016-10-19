@@ -1,0 +1,93 @@
+<mvc:View
+controllerName="apimngmnt3.controller.View2" 
+xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:l="sap.ui.layout"
+xmlns:core="sap.ui.core"
+xmlns="sap.m">
+			<Page id="productPage"  showHeader="true" showNavButton="true" navButtonPress="onNavBack">
+				<headerContent>
+					<Button icon="sap-icon://share-2" press="onShareProductPress" />
+				</headerContent>
+				<content>
+				   <ObjectHeader
+        				title="{/title}"
+        				icon="sap-icon://attachment-photo"
+        				numberUnit="API Products"
+        				markFavorite="true"
+        				markFlagged="true"
+        				showMarkers="true">
+        				<attributes>
+        					<ObjectAttribute title="App Key" text="{/app_key}" />
+        					<ObjectAttribute title="App Sceret" text="{/app_secret}" />
+        				</attributes>
+        			</ObjectHeader>
+				   	<IconTabBar
+                		upperCase="true"
+                		expanded="{device>/isNoPhone}"
+                		class="sapUiResponsiveContentPadding">
+                		<items>
+                		    <IconTabFilter
+                				text="API Products"
+                				count="{
+                    				    path: '/ToAPIProductsDetails/results',
+                    				    formatter: '.formatter.formatAPIProxies'
+                    				}">
+                					<Table id="apiProxiesTable"
+                                		inset="false"
+                                		items="{/ToAPIProductsDetails/results}"
+                                		>
+                                		<headerToolbar>
+                                			<Toolbar>
+                                				<Title text="API Products" level="H2"/>
+                                			</Toolbar>
+                                		</headerToolbar>
+                                		<columns>
+                                			<Column
+                                				width="12em">
+                                				<Text text="Title" />
+                                			</Column>
+                                			<Column
+                                				minScreenWidth="Tablet"
+                                				demandPopin="true">
+                                				<Text text="Description" />
+                                			</Column>
+                                			<Column
+                                				minScreenWidth="Tablet"
+                                				demandPopin="true">
+                                				<Text text="Pubished By" />
+                                			</Column>
+                                			<Column
+                                				minScreenWidth="Tablet"
+                                				demandPopin="true"
+                                				hAlign="Center">
+                                				<Text text="Published At" />
+                                			</Column>
+                                			<Column>
+                                				<Text text="Version" />
+                                			</Column>
+                                		</columns>
+                                	<items>
+                                			<ColumnListItem>
+                                				<cells>
+                                					<ObjectIdentifier
+                                						text="{title}"/>
+                                					<Text
+                                						text="{description}" />
+                                					<Text
+                                						text="{life_cycle/published_by}" />
+                                					    <Text
+                                						text="{life_cycle/published_at}" />
+                                					<ObjectNumber
+                                						number="{version}"
+                                						/>
+                                				</cells>
+                                			</ColumnListItem>
+                                		</items>
+                                	</Table>
+                			</IconTabFilter>
+                		</items>
+                	</IconTabBar>
+				</content>
+			</Page>
+</mvc:View>

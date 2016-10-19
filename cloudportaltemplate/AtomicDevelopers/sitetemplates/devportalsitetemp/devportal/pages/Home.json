@@ -1,0 +1,201 @@
+{
+	"_version": "1.3.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "hcp://devportalsitetemp/devportal/pages/Home.json",
+		"baseId": "hcp://devportalsitetemp/devportal/pageTemplates/LandingPage/manifest.json",
+		"title": "Home",
+		"description": "A page layout that contain one predefined section",
+		"crossNavigation": {
+			"context": {},
+			"inbounds": {
+				"0": {
+					"semanticObject": "Home",
+					"action": "Display"
+				},
+				"1": {
+					"semanticObject": "Home",
+					"action": "show"
+				}
+			}
+		}
+	},
+	"sap.cloud.portal": {
+		"applicationType": "page",
+		"thumbnail": "preview.png",
+		"nodes": {
+			"body2":{
+				"sectionAlias": "body.content2",
+		        "_version": "1.3.0",
+		        "sap.app": {
+		          "_version": "1.3.0",
+		          "id": "hcp://portalapptemplates/imageWidget/manifest.json",
+		          "title": "Image Widget",
+		          "description": "A widget template that displays images."
+		        },
+		        "sap.platform.hcp": {
+		          "_version": "1.2.0",
+		          "appName": "portalapptemplates",
+		          "uri": "/imageWidget"
+		        },
+		        "sap.cloud.portal": {
+		          "show.portal.settings": "false",
+		          "settings": {
+		            "source": {
+		              "value": "0"
+		            },
+		            "resources": {
+		              "url": [
+		                {
+		                  "value": "/images/homeImage1.png"
+		                }
+		              ]
+		            },
+		            "state": {
+		              "value": "0"
+		            },
+		            "height": {
+		              "value": "340"
+		            },
+		            "units": {
+		              "value": "px"
+		            },
+		            "alignment": {
+		              "value": 4
+		            },
+		            "isTemplateResource": true
+		          }
+		        },
+		        "sap.flp": {
+		          "config": {}
+		        },
+		        "sap.ui": {
+		          "_version": "1.3.0",
+		          "technology": "UI5"
+		        },
+		        "sap.ui5": {
+		          "_version": "1.2.0",
+		          "componentName": "sap.cp.widgets.image",
+		          "routing": {
+		            "config": {
+		              "routerClass": "sap.hana.uis.flp.routing.Router"
+		            }
+		          },
+		          "rootView": "sap.cp.widgets.image.view.Widget",
+		          "models": {
+		            "i18nApp": {
+		              "type": "sap.ui.model.resource.ResourceModel",
+		              "uri": "i18n/i18n.properties"
+		            }
+		          },
+		          "resources": {
+		            "css": [
+		              {
+		                "uri": "css/style.css"
+		              }
+		            ]
+		          }
+		        }
+			},
+			"body3":{
+				"sectionAlias": "body.content3",
+				"_version": "1.3.0",
+				"sap.app": {
+					"_version": "1.1.0",
+					"id": "hcp://videowidget/manifest.json",
+					"type": "application",
+					"i18n": "i18n/i18n.properties",
+					"applicationVersion": {
+						"version": "1.0.0"
+					},
+					"title": "Video Widget",
+					"description": "Embed any standard YouTube URL in a site page",
+					"sourceTemplate": {
+						"id": "ui5template.basicSAPUI5ApplicationProject",
+						"version": "1.32.0"
+					}
+				},
+				"sap.ui": {
+					"_version": "1.1.0",
+					"technology": "UI5",
+					"icons": {
+						"icon": "",
+						"favIcon": "",
+						"phone": "",
+						"phone@2": "",
+						"tablet": "",
+						"tablet@2": ""
+					},
+					"deviceTypes": {
+						"desktop": true,
+						"tablet": true,
+						"phone": true
+					},
+					"supportedThemes": [
+						"sap_hcb",
+						"sap_bluecrystal"
+					]
+				},
+				"sap.ui5": {
+					"_version": "1.1.0",
+					"rootView": {
+						"viewName": "VideoWidget.view.Main",
+						"type": "XML"
+					},
+					"dependencies": {
+						"minUI5Version": "1.30.0",
+						"libs": {
+							"sap.ui.core": {},
+							"sap.m": {},
+							"sap.ui.layout": {}
+						}
+					},
+					"contentDensities": {
+						"compact": true,
+						"cozy": true
+					},
+					"models": {
+						"i18n": {
+							"type": "sap.ui.model.resource.ResourceModel",
+							"settings": {
+								"bundleName": "VideoWidget.i18n.i18n"
+							}
+						}
+					},
+					"resources": {
+						"css": [
+							{
+								"uri": "css/style.css"
+							}
+						]
+					},
+					"componentName": "VideoWidget"
+				},
+				"sap.flp": {
+					"appType": "SAP_UI5_Component",
+					"config": {
+						"editable": true,
+						"deletable": true
+					}
+				},
+				"sap.platform.hcp": {
+					"uri": "",
+					"appName": "videowidget",
+					"_version": "1.1.0"
+				},
+				"sap.cloud.portal": {
+					"settings": {
+						"videoUrl": {
+							"displayName": "YouTube URL",
+							"value": "https://youtu.be/Qk4FvzRT_mY?list=PLWV533hWWvDkiHSoJJJg-MObMzwYN_5pP"
+						},
+						"widgetHeight": {
+							"displayName": "Widget height in pixels",
+							"value": "340"
+						}
+					}
+				}
+			}
+		}
+	}
+}

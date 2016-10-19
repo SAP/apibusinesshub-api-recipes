@@ -1,0 +1,24 @@
+{
+  "run": [
+    {
+      "projectPath": "/devportalsitetemp",
+      "filePath": "/devportalsitetemp",
+      "appName": "devportalsitetemp",
+      "orion": "/abf389ef0$IDO.SHEMESH@SAP.COM-OrionContent/devportalsitetemp/",
+      "provider": {
+        "providerAccount": "portal",
+        "name": "flpnwc",
+        "url": "https://flpnwc-abf389ef0.dispatcher.hana.ondemand.com"
+      },
+      "_metadata": {
+        "runnerId": "cpv2PreviewRunner",
+        "id": 5725328,
+        "displayName": "Run devportalsitetemp",
+        "lastRunTimeStamp": 1470676149100
+      }
+    }
+  ],
+  "hybrid": {
+    "dirty": false
+  }
+}

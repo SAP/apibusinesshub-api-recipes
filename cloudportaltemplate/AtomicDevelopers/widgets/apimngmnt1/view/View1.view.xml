@@ -1,0 +1,82 @@
+<mvc:View 
+    controllerName="apimngmnt1.controller.View1" 
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <App id="app">
+        <pages>
+			<Page showHeader="true" title="Our API Catalog">
+				<content>
+				    <List id="list"  selectionChange="onItemSelect" mode="SingleSelectMaster" items="{
+				                path: '/APIMgmt.APIProducts',
+				  				sorter: {
+                    				path: 'title'
+								},
+				                parameters: {expand: 'ToAPIProxies'}
+				              
+				    }">
+				    	
+				    	<!-- path: '/APIProducts',
+				                parameters: {expand: 'apiProxies'}-->
+				    	
+				         <!--path: '/APIMgmt.APIProducts'-->
+				          <!--parameters: {expand: 'ToAPIProxies'}  -->
+				          <!--icon="sap-icon://attachment-photo"-->
+                		<CustomListItem>
+                		    <ObjectHeader
+	               		            title="{title}"
+                    				number="{
+                    				    path: 'ToAPIProxies',
+                    				    formatter: '.formatter.formatAPIProxies'
+                    				}"
+                    				
+                    				icon="{
+                    				    path: '',
+                    				    formatter: '.formatter.formatIcon'
+                    				}"
+                    				numberUnit="API Proxies"
+                    				markFavorite="{ff>/isFavorite}"
+                    				markFlagged="{ff>/isFlagged}"
+                    				showMarkers="true">
+                    				<attributes>
+                    				    <ObjectAttribute id="attr0" text="{description}" />
+                    					<ObjectAttribute id="attr1" title="Published By" text="{published_by}" />
+                    					<ObjectAttribute id="attr2" title="Published At"  text="{
+                    					        path: 'published_at',
+                    					        formatter: '.formatter.formatDate'
+                    					        }" />
+                    				</attributes>
+                    			</ObjectHeader>
+                			<!--<HBox>-->
+                			<!--	<core:Icon size="2rem" src="sap-icon://attachment-photo" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />-->
+                			<!--	    <ObjectHeader-->
+                			<!--	    width="80%"-->
+                   <!-- 				title="{title}"-->
+                   <!-- 				number="{-->
+                   <!-- 				    path: 'ToAPIProxies',-->
+                   <!-- 				    formatter: '.formatter.formatAPIProxies'-->
+                   <!-- 				}"-->
+                   <!-- 				numberUnit="API Proxies"-->
+                   <!-- 				markFavorite="{ff>/isFavorite}"-->
+                   <!-- 				markFlagged="{ff>/isFlagged}"-->
+                   <!-- 				showMarkers="true">-->
+                   <!-- 				<attributes>-->
+                   <!-- 				    <ObjectAttribute id="attr0" text="{description}" />-->
+                   <!-- 					<ObjectAttribute id="attr1" title="Published By" text="{published_by}" />-->
+                   <!-- 					<ObjectAttribute id="attr2" title="Published At" text="{published_at}" />-->
+                   <!-- 					<ObjectAttribute id="attr2" title="Published At"  text="{-->
+                   <!-- 					        path: 'published_at',-->
+                   <!-- 					        formatter: '.formatter.formatDate'-->
+                   <!-- 					        }" />-->
+                   <!-- 				</attributes>-->
+                   <!-- 			</ObjectHeader>-->
+                			<!--</HBox>-->
+                		</CustomListItem>
+                	</List>
+				</content>
+			</Page>
+		</pages>
+    </App>
+</mvc:View>

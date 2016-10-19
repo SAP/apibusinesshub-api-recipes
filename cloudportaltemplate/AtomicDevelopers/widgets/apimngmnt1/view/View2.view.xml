@@ -1,0 +1,96 @@
+<mvc:View controllerName="apimngmnt1.controller.View2" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page id="productPage" showHeader="true" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<Button icon="sap-icon://share-2" press="onShareProductPress"/>
+		</headerContent>
+		<content>
+			<ObjectHeader title="{/title}" intro="{/description}" icon="sap-icon://attachment-photo" numberUnit="API Proxies" markFavorite="true"
+				markFlagged="true" showMarkers="true">
+				<attributes>
+					<ObjectAttribute id="attr1" title="Published By" text="{/published_by}"/>
+					<ObjectAttribute id="attr2" title="Published At" text="{ path: '/published_at', formatter: '.formatter.formatDate' }"/>
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="apiProxyTabBar" upperCase="true" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="API Proxies" count="{ path: '/ToAPIProxies/results', formatter: '.formatter.formatAPIProxies' }">
+						<Table id="apiProxiesTable" inset="false" items="{/ToAPIProxies/results}">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="API Proxies" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="Title"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Description"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Pubished By"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="Published At"/>
+								</Column>
+								<Column>
+									<Text text="Version"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ObjectIdentifier text="{title}"/>
+										<Text text="{description}"/>
+										<Text text="{published_by}"/>
+										<Text text="{ path: '/published_at', formatter: '.formatter.formatDate' }"/>
+										<ObjectNumber number="{version}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="Application Details" count="{ path: '/ToApplicationDetails/results', formatter: '.formatter.formatAPIProxies' }"
+						id="applicationTabBar">
+						<Table id="appDetailsTable" inset="false" items="{/ToApplicationDetails/results}">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="Application Details" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="Title"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Version"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Developer"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="Created At"/>
+								</Column>
+								<Column>
+									<Text text="Status"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ObjectIdentifier text="{title}"/>
+										<Text text="{version}"/>
+										<Text text="{developer_id}"/>
+										<Text text="{ path: 'created_at', formatter: '.formatter.formatDate' }"/>
+										<Text text="{status_code}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

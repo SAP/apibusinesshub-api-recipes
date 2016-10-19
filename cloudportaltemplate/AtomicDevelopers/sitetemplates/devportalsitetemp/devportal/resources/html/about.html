@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head lang='en'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset='UTF-8'>
+    <style>
+        .nav_item_container:hover div {
+            color:#007cc0;
+            cursor: pointer;
+        }
+        .nav_item_container div {
+            font-weight: normal;
+            font-size: 18px;
+            display: inline-block;
+            float: left;
+            color: #3f5161;
+            line-height: 80px;
+            text-align: center;
+        }
+        .main {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: BentonSansEmbedded, Helvetica, sans-serif;
+            background-color: #F4F4F4;
+        }
+        .features_center {
+            max-width: 1200px;
+            margin: 50px auto;
+            background-image: url('/sap/fiori/devportalsitetemp/devportal/images/Features/kav.png');
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: #2d3845;
+            padding: 60px 0;
+        }
+        .feature_row{
+            display: block;
+            clear: both;
+            background-repeat: no-repeat;
+            background-position: center top;
+            min-height: 59px;
+            font-size: 16px;
+        }
+        .feature_row .placeholder {
+            display: block;
+            min-height: 25px;
+        }
+        #business {
+            background-image: url('/sap/fiori/devportalsitetemp/devportal/images/Features/business.png');
+        }
+        #capabilities {
+            background-image: url('/sap/fiori/devportalsitetemp/devportal/images/Features/capabilities.png');
+        }
+        #accelerator {
+            background-image:  url('/sap/fiori/devportalsitetemp/devportal/images/Features/acalertors.png');
+        }
+        #technology {
+            background-image: url('/sap/fiori/devportalsitetemp/devportal/images/Features/integration.png');
+        }
+        #experience {
+            background-image: url('/sap/fiori/devportalsitetemp/devportal/images/Features/rich.png');
+        }
+        .feature_left {
+            text-align: right;
+            display: inline-block;
+            width: 50%;
+        }
+        .feature_right {
+            text-align: left;
+            display: inline-block;
+            width: 50%;
+            float: right;
+        }
+        .feature_left p {
+            text-align: right;
+            padding: 0 45px 0 10px;
+            margin: 5px 0;
+        }
+        .feature_left p:after{
+            content: '';
+            display: block;
+            background: url('/sap/fiori/devportalsitetemp/devportal/images/Features/dot.png') no-repeat;
+            width: 15px;
+            height: 15px;
+            float: right;
+            margin: 8px 0 0 5px;
+        }
+
+        .feature_left p:before{
+            content: '';
+            display: none;
+            background: url('/sap/fiori/devportalsitetemp/devportal/images/Features/dot.png') no-repeat;
+            width: 15px;
+            height: 15px;
+            margin: 8px 5px 0 0;
+        }
+        .feature_right p {
+            text-align: left;
+            padding: 0 10px 0 45px;
+            margin: 5px 0;
+        }
+        .feature_right p:before{
+            content: '';
+            display: block;
+            background: url('/sap/fiori/devportalsitetemp/devportal/images/Features/dot.png') no-repeat;
+            width: 15px;
+            height: 15px;
+            float: left;
+            margin: 8px 0 0 5px;
+        }
+        .feature_header {
+            color:#007cc0;
+            font-weight:bold ;
+            margin-bottom: 10px;
+        }
+        .feature_left .feature_header {
+            text-align: right;
+            padding: 0 55px 0 0;
+        }
+        .feature_right .feature_header {
+            text-align: left;
+            padding: 0 0 0 55px;
+        }
+
+        @media only screen and (max-width:1240px) {
+            .feature_header {
+                font-size: 16px;
+            }
+            .feature_left p, .feature_right p {
+                font-size: 14px;
+            }
+        }
+         /*******SMARTPHONE********/
+        .sapUiMedia-Std-Phone .features_mobile {
+            display: block;
+            max-width: 95%;
+            margin: 50px auto;
+            background-image: url('/sap/fiori/devportalsitetemp/devportal/images/Features/kav_mobile.png');
+            background-repeat: repeat-y;
+            background-position: -7px -280px;
+            background-size: initial;
+            padding: 20px 0;
+        }
+        .features_mobile {
+            display: none;
+        }
+        .sapUiMedia-Std-Phone .features_center {
+            display: none;
+        }
+        .sapUiMedia-Std-Phone .icons_placeholder {
+            display: inline-block;
+            width: 70px;
+            float: left;
+        }
+        .sapUiMedia-Std-Phone .feature_row {
+            display: block;
+            width: 100%;
+            font-size: 14px;
+        }
+        .sapUiMedia-Std-Phone .icons_placeholder img {
+            width: 40px;
+            height: auto;
+            margin: auto;
+            display: block;
+        }
+        .sapUiMedia-Std-Phone .feature {
+            vertical-align: top;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .sapUiMedia-Std-Phone .feature p:before{
+            vertical-align: middle;
+            content: '';
+            display: block;
+            background: url('/sap/fiori/devportalsitetemp/devportal/images/Features/dot.png') no-repeat;
+            width: 15px;
+            height: 15px;
+            float: left;
+            margin: 8px 0 0 5px;
+        }
+        .sapUiMedia-Std-Phone .feature p {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class='main'>
+        <div class='features_center'>
+            <div class='feature_row' id='business'>
+                <div class='placeholder'></div>
+                <div class='feature_left'>
+                    <div class='feature_header'>Meant for business: </div>
+                        <p>Site templates include marketing sites, support sites, self-service sites</p>
+                        <p>Powerful branding and customization options</p>
+
+                </div>
+                <div class='feature_right'></div>
+            </div>
+            <div class='feature_row' id='capabilities'>
+                <div class='placeholder'></div>
+                <div class='feature_left'></div>
+                <div class='feature_right'>
+                    <div class='feature_header'>Built-in access management capabilities:</div>
+
+                        <p>Role-based authorization</p>
+                        <p>Different home pages for different scenarios</p>
+                        <p>Public / restricted access</p>
+                        <p>Optional SCI login</p>
+                        <p>Built in features for translating the site, exporting and importing sites</p>
+                        <p>Out-of-the-box usage analytics for hands-on site management</p>
+
+                </div>
+            </div>
+            <div class='feature_row' id='technology'>
+                <div class='placeholder'></div>
+                <div class='feature_left'>
+                <div class='feature_header'>Seamless integration with SAP technology and solutions, including: </div>
+                    <p>SAPUI5, Web IDE</p>
+                    <p>SAP Success Factors</p>
+                    <p>SAP Cloud for Customer</p>
+                    <p>SAP Business Suite</p>
+                    <p>SAP Fiori</p>
+            </div>
+                <div class='feature_right'></div>
+            </div>
+            <div class='feature_row' id='accelerator'>
+                <div class='placeholder'></div>
+                <div class='feature_right'>
+                <div class='feature_header'>Accelerators: boost site development and extensions with:</div>
+                    <p>Gorgeous site templates ready for use</p>
+                    <p>Full support for business scenarios such as support, marketing, HR</p>
+                    <p>Additional sample content available on GitHub</p>
+                    <p>Lively developer community in SAP Community Network</p>
+            </div>
+                <div class='feature_left'></div>
+            </div>
+            <div class='feature_row' id='experience'>
+                <div class='placeholder'></div>
+                <div class='feature_left'>
+                    <div class='feature_header'>Rich user experience: </div>
+                        <p>Responsive design for mobile use</p>
+                        <p>Supports SAP Fiori launchpad </p>
+                        <p>Cutting-edge design for predefined content and templates</p>
+                </div>
+                <div class='feature_right'></div>
+            </div>
+        </div>
+        <div class='features_mobile'>
+            <div class='feature_row'>
+                <div class='icons_placeholder'>
+                    <img src='/sap/fiori/devportalsitetemp/devportal/images/Features/business.png'>
+                </div>
+                <div class='feature'>
+                    <div class='feature_header'>Meant for business: </div>
+                    <p>Site templates include marketing sites, support sites, self-service sites</p>
+                    <p>Powerful branding and customization options</p>
+                </div>
+            </div>
+            <div class='feature_row'>
+                <div class='icons_placeholder'>
+                    <img src='/sap/fiori/devportalsitetemp/devportal/images/Features/capabilities.png'>
+                </div>
+                <div class='feature'>
+                    <div class='feature_header'>Built-in access management capabilities:</div>
+                    <p>Role-based authorization</p>
+                    <p>Different home pages for different scenarios</p>
+                    <p>Public or restricted access</p>
+                    <p>Optional SCI login</p>
+                    <p>Built-in features for translating the site, exporting and importing sites</p>
+                    <p>Out-of-the-box usage analytics for hands-on site management</p>
+                </div>
+            </div>
+            <div class='feature_row'>
+                <div class='icons_placeholder'>
+                    <img src='/sap/fiori/devportalsitetemp/devportal/images/Features/integration.png'>
+                </div>
+                <div class='feature'>
+                    <div class='feature_header'>Seamless integration with SAP technology and solutions, including: </div>
+                    <p>SAPUI5, Web IDE</p>
+                    <p>Success Factors</p>
+                    <p>Cloud for Customer</p>
+                    <p>Business Suite</p>
+                    <p>SAP Fiori</p>
+                </div>
+            </div>
+            <div class='feature_row' >
+                <div class='icons_placeholder'>
+                    <img src='/sap/fiori/devportalsitetemp/devportal/images/Features/acalertors.png'>
+                </div>
+                <div class='feature'>
+                    <div class='feature_header'>Accelerators: boost site development and extensions with:</div>
+                    <p>Gorgeous site templates ready for use</p>
+                    <p>Full support for business scenarios such as support, marketing and HR</p>
+                    <p>Additional sample content available on GitHub</p>
+                    <p>Lively developer community in SAP Community Network</p>
+                </div>
+            </div>
+            <div class='feature_row' >
+                <div class='icons_placeholder'>
+                    <img src='/sap/fiori/devportalsitetemp/devportal/images/Features/rich.png'>
+                </div>
+                <div class='feature'>
+                    <div class='feature_header'>Rich user experience: </div>
+                    <p>Responsive design for mobile use</p>
+                    <p>Supports SAP Fiori launchpad </p>
+                    <p>Cutting-edge design for predefined content and templates</p>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

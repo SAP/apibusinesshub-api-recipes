@@ -1,0 +1,10 @@
+[
+	{
+		"id": "hcp://apimngmnt2/manifest.json",
+		"_entityType": "PORTAL_SITE_V2_TEMPLATE_APP_CONFIG",
+		"path": "",
+		"name": "Create API App",
+		"thumbnail": "sap-icon://developer-settings",
+		"preview": ""
+	}
+]

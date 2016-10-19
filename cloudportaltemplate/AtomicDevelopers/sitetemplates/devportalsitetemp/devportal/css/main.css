@@ -1,0 +1,48 @@
+.cpv2-scroll-content>.sapMScrollContScroll {
+    width: 100%;
+}
+
+.cpv2-page-1280 {
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.sapUiBlockCellContent {
+    padding: 0rem !important;  
+}
+
+.blocklayout{
+	padding-top: 40px;
+}
+
+.blocklayoutBody{
+	padding-top: 25px;
+	height: 73% !important;
+}
+
+.leftCol{
+	margin-right: 20px;
+}
+
+.rightCol{
+	width: 30%;
+	margin-left: 20px;
+}
+
+.blocklayoutFooter{
+	padding-top: 50px;
+}
+
+.blockcell{
+	background-color: #fff;
+	opacity: 0.9;
+}
+
+.blockcellWhite{
+	background-color: #fff;
+}
+
+.paddingRight{
+	padding-right: 20px;
+}

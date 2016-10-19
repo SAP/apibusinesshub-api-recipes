@@ -1,0 +1,35 @@
+{
+	"welcomeFile": "/index.html",
+	"authenticationMethod": "saml",
+	"routes": [{
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/resources"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/test-resources"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/destinations/API_Management_Dev_Portal",
+		"target": {
+			"type": "destination",
+			"name": "apimgmtdevportal"
+		},
+		"description": "API_Management_Dev_Portal"
+	}],
+	"sendWelcomeFileRedirect": true,
+    "cacheControl": [
+        {
+            "directive": "public",
+            "maxAge": 0
+        }
+    ]
+}

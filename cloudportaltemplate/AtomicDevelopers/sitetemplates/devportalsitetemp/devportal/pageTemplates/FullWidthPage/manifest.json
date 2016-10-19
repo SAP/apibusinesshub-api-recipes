@@ -1,0 +1,491 @@
+{
+	"_version": "1.3.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "hcp://devportalsitetemp/devportal/pageTemplates/FullWidthPage/manifest.json",
+		"title": "FullWidthPage",
+		"description": "A page layout that contain one predefined section ",
+		"tags": {
+			"keywords": []
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"0": {
+					"semanticObject": "obj",
+					"action": "FullWidthPage",
+					"deviceTypes": {
+						"desktop": true,
+						"tablet": true,
+						"phone": true
+					}
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"_version": "1.2.0",
+		"appName": "devportalsitetemp",
+		"uri": "/devportal/pageTemplates/FullWidthPage"
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"componentName": "cpv2.templates.FullWidthPage"
+	},
+	"sap.flp": {
+		"_version": "1.1.0",
+		"config": {}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5"
+	},
+	"sap.cloud.portal": {
+		"applicationType": "page",
+		"thumbnail": "preview.png",
+		"nodes": {
+			"header1": {
+				"sectionAlias": "header.logo",
+				 "_version": "1.3.0",
+		        "sap.app": {
+		          "_version": "1.3.0",
+		          "id": "hcp://portalapptemplates/imageWidget/manifest.json",
+		          "title": "Image Widget",
+		          "description": "A widget template that displays images."
+		        },
+		        "sap.platform.hcp": {
+		          "_version": "1.2.0",
+		          "appName": "portalapptemplates",
+		          "uri": "/imageWidget"
+		        },
+		        "sap.cloud.portal": {
+		          "show.portal.settings": "false",
+		          "settings": {
+		            "source": {
+		              "value": "0"
+		            },
+		            "resources": {
+		              "url": [
+		                {
+		                  "value": "/images/Banner1.png"
+		                }
+		              ]
+		            },
+		            "state": {
+		              "value": "2"
+		            },
+		            "height": {
+		              "value": "40"
+		            },
+		            "units": {
+		              "value": "pt"
+		            },
+		            "alignment": {
+		              "value": 3
+		            },
+		            "isTemplateResource": true
+		          }
+		        },
+		        "sap.flp": {
+		          "config": {}
+		        },
+		        "sap.ui": {
+		          "_version": "1.3.0",
+		          "technology": "UI5"
+		        },
+		        "sap.ui5": {
+		          "_version": "1.2.0",
+		          "componentName": "sap.cp.widgets.image",
+		          "routing": {
+		            "config": {
+		              "routerClass": "sap.hana.uis.flp.routing.Router"
+		            }
+		          },
+		          "rootView": "sap.cp.widgets.image.view.Widget",
+		          "models": {
+		            "i18nApp": {
+		              "type": "sap.ui.model.resource.ResourceModel",
+		              "uri": "i18n/i18n.properties"
+		            }
+		          },
+		          "resources": {
+		            "css": [
+		              {
+		                "uri": "css/style.css"
+		              }
+		            ]
+		          }
+		        }
+			},
+			"header2": {
+				"sectionAlias": "header.login",
+				"_version": "1.3.0",
+				"sap.app": {
+					"_version": "1.1.0",
+					"id": "hcp://sciloginwidget/manifest.json",
+					"type": "application",
+					"i18n": "i18n/i18n.properties",
+					"applicationVersion": {
+						"version": "1.0.0"
+					},
+					"title": "Login Widget",
+					"description": "Generates an SCI login overlay, or redirects to a login screen",
+					"sourceTemplate": {
+						"id": "ui5template.basicSAPUI5ApplicationProject",
+						"version": "1.32.0"
+					}
+				},
+				"sap.ui": {
+					"_version": "1.1.0",
+					"technology": "UI5",
+					"icons": {
+						"icon": "",
+						"favIcon": "",
+						"phone": "",
+						"phone@2": "",
+						"tablet": "",
+						"tablet@2": ""
+					},
+					"deviceTypes": {
+						"desktop": true,
+						"tablet": true,
+						"phone": true
+					},
+					"supportedThemes": [
+						"sap_hcb",
+						"sap_bluecrystal"
+					]
+				},
+				"sap.ui5": {
+					"_version": "1.1.0",
+					"rootView": {
+						"viewName": "SCILoginWidget.view.main",
+						"type": "XML"
+					},
+					"dependencies": {
+						"minUI5Version": "1.30.0",
+						"libs": {
+							"sap.ui.core": {},
+							"sap.m": {},
+							"sap.ui.layout": {}
+						}
+					},
+					"contentDensities": {
+						"compact": true,
+						"cozy": true
+					},
+					"resources": {
+						"css": [{
+							"uri": "css/style.css"
+						}]
+					},
+					"routing": {
+						"config": {
+							"routerClass": "sap.hana.uis.flp.routing.Router"
+						}
+					},
+					"config": {
+						"sci": {
+							"useOverlay": true,
+							"sci_tenant": "https://flplto.accounts.ondemand.com",
+							"sap_ids_path": "/ui/resources/javascripts/SAP_IDS.js"
+						}
+					},
+					"componentName": "SCILoginWidget"
+				},
+				"sap.flp": {
+					"appType": "SAP_UI5_Component",
+					"config": {
+						"editable": true,
+						"deletable": true
+					}
+				},
+				"sap.platform.hcp": {
+					"uri": "",
+					"appName": "sciloginwidget",
+					"_version": "1.1.0"
+				},
+				"sap.cloud.portal": {}
+			},
+			"header3": {
+				"sectionAlias": "header.navbar",
+				"_version": "1.3.0",
+				"sap.app": {
+					"_version": "1.1.0",
+					"id": "hcp://horizontalnavwidget/webapp/manifest.json",
+					"type": "application",
+					"i18n": "i18n/i18n.properties",
+					"applicationVersion": {
+						"version": "1.0.0"
+					},
+					"title": "Horizontal Nav 2",
+					"description": "{{appDescription}}",
+					"sourceTemplate": {
+						"id": "ui5template.basicSAPUI5ApplicationProject",
+						"version": "1.32.0"
+					}
+				},
+				"sap.ui": {
+					"_version": "1.1.0",
+					"technology": "UI5",
+					"icons": {
+						"icon": "",
+						"favIcon": "",
+						"phone": "",
+						"phone@2": "",
+						"tablet": "",
+						"tablet@2": ""
+					},
+					"deviceTypes": {
+						"desktop": true,
+						"tablet": true,
+						"phone": true
+					},
+					"supportedThemes": [
+						"sap_hcb",
+						"sap_bluecrystal"
+					]
+				},
+				"sap.ui5": {
+					"_version": "1.1.0",
+					"rootView": {
+						"viewName": "horizontalnavwidget.view.Navigation",
+						"type": "XML"
+					},
+					"dependencies": {
+						"minUI5Version": "1.30.0",
+						"libs": {
+							"sap.ui.core": {},
+							"sap.m": {},
+							"sap.ui.layout": {}
+						}
+					},
+					"contentDensities": {
+						"compact": true,
+						"cozy": true
+					},
+					"models": {
+						"i18n": {
+							"type": "sap.ui.model.resource.ResourceModel",
+							"settings": {
+								"bundleName": "horizontalnavwidget.i18n.i18n"
+							}
+						}
+					},
+					"resources": {
+						"css": [{
+							"uri": "css/style.css"
+						}]
+					},
+					"routing": {
+						"config": {
+							"routerClass": "sap.hana.uis.flp.routing.Router"
+						}
+					},
+					"componentName": "horizontalnavwidget"
+				},
+				"sap.flp": {
+					"appType": "SAP_UI5_Component",
+					"config": {
+						"editable": true,
+						"deletable": true
+					}
+				},
+				"sap.platform.hcp": {
+					"uri": "webapp",
+					"appName": "horizontalnavwidget",
+					"_version": "1.1.0"
+				},
+				"sap.cloud.portal": {
+					"settings": {}
+				}
+			},
+			"footer1": {
+				"sectionAlias": "footer.links",
+				"_version": "1.3.0",
+				"sap.app": {
+					"_version": "1.3.0",
+					"id": "hcp://portalapptemplates/htmlwidget/manifest.json",
+					"title": "HTML Widget",
+					"description": "A widget files.",
+					"tags": {
+						"keywords": [
+							"keyword"
+						]
+					},
+					"crossNavigation": {
+						"inbounds": {
+							"0": {
+								"semanticObject": "htmlwidget",
+								"action": "Display"
+							}
+						}
+					}
+				},
+				"sap.platform.hcp": {
+					"_version": "1.2.0",
+					"appName": "portalapptemplates",
+					"uri": "/htmlwidget"
+				},
+				"sap.ui5": {
+					"_version": "1.2.0",
+					"componentName": "htmlwidget.local"
+				},
+				"sap.cloud.portal": {
+					"show.portal.settings": "false",
+					"settings": {
+						"markup": {
+							"isRequired": "false",
+							"storage_type": "html",
+							"value": "<div style=\"position: absolute; font-family:arial,helvetica,sans-serif;padding-left: 10px;padding-top: 7px;overflow: hidden;padding-right: 10px; font-family:arial,helvetica,sans-serif; font-size: 15px; text-decoration: none;color: white;\"><a href=\"http://scn.sap.com/docs/DOC-26265\" style=\"text-decoration: none;padding-right: 7px;color: white;cursor: pointer;\" target=\"_blank\"><span style=\"color:#000000;\">About</span></a><span style=\"color:#000000;\"> <span style=\"padding-right: 7px;\"> | </span> </span><a href=\"https://help.prod.jpaas.sapbydesign.com/cloud_portal/frameset.htm\" style=\"text-decoration: none;padding-right: 7px;color: white;cursor: pointer;\" target=\"_blank\"><span style=\"color:#000000;\">Help</span></a><span style=\"color:#000000;\"> <span style=\"padding-right: 7px;\"> | </span> </span><a href=\"http://www1.sap.com/corporate-en/our-company/legal/terms_of_use.epx\" style=\"text-decoration: none;padding-right: 7px;color: white;cursor: pointer;\" target=\"_blank\"><span style=\"color:#000000;\">Terms and Conditions</span></a><span style=\"color:#000000;\"> <span style=\"padding-right: 7px;\"> | </span> </span><a href=\"http://www1.sap.com/corporate-en/our-company/legal/privacy.epx\" style=\"text-decoration: none;padding-right: 7px;color: white;cursor: pointer;\" target=\"_blank\"><span style=\"color:#000000;\">Privacy Policy</span></a></div>",
+							"displayName": "HTML",
+							"description": "{{resource_url_description}}",
+							"id": "markup"
+						}
+					}
+				},
+				"sap.flp": {
+					"appType": "SAP_UI5_Component",
+					"config": {
+						"editable": true,
+						"deletable": true
+					}
+				},
+				"sap.ui": {
+					"_version": "1.3.0",
+					"technology": "UI5"
+				}
+			},
+			"footer2": {
+				"sectionAlias": "footer.social",
+				"_version": "1.3.0",
+				"sap.app": {
+					"_version": "1.1.0",
+					"id": "hcp://socialnetworkswidget/manifest.json",
+					"type": "application",
+					"i18n": "i18n/i18n.properties",
+					"applicationVersion": {
+						"version": "1.0.0"
+					},
+					"title": "Social Networks Widget",
+					"description": "Add quick links to your company's social pages",
+					"sourceTemplate": {
+						"id": "ui5template.basicSAPUI5ApplicationProject",
+						"version": "1.32.0"
+					}
+				},
+				"sap.ui": {
+					"_version": "1.1.0",
+					"technology": "UI5",
+					"icons": {
+						"icon": "",
+						"favIcon": "",
+						"phone": "",
+						"phone@2": "",
+						"tablet": "",
+						"tablet@2": ""
+					},
+					"deviceTypes": {
+						"desktop": true,
+						"tablet": true,
+						"phone": true
+					},
+					"supportedThemes": [
+						"sap_hcb",
+						"sap_bluecrystal"
+					]
+				},
+				"sap.ui5": {
+					"_version": "1.1.0",
+					"rootView": {
+						"viewName": "SocialNetworksWidget.view.Main",
+						"type": "XML"
+					},
+					"dependencies": {
+						"minUI5Version": "1.30.0",
+						"libs": {
+							"sap.ui.core": {},
+							"sap.m": {},
+							"sap.ui.layout": {}
+						}
+					},
+					"contentDensities": {
+						"compact": true,
+						"cozy": true
+					},
+					"models": {
+						"i18n": {
+							"type": "sap.ui.model.resource.ResourceModel",
+							"settings": {
+								"bundleName": "SocialNetworksWidget.i18n.i18n"
+							}
+						}
+					},
+					"resources": {
+						"css": [{
+							"uri": "css/style.css"
+						}]
+					},
+					"routing": {
+						"config": {
+							"routerClass": "sap.hana.uis.flp.routing.Router"
+						}
+					},
+					"componentName": "SocialNetworksWidget"
+				},
+				"sap.flp": {
+					"appType": "SAP_UI5_Component",
+					"config": {
+						"editable": true,
+						"deletable": true
+					}
+				},
+				"sap.platform.hcp": {
+					"uri": "",
+					"appName": "socialnetworkswidget",
+					"_version": "1.1.0"
+				},
+				"sap.cloud.portal": {
+					"show.portal.settings": "false",
+					"settings": {
+						"size": "Medium",
+						"orientation": "Center",
+						"networks": [{
+							"name": "Twitter",
+							"isActive": true,
+							"url": "https://twitter.com/PORTAL_SAP",
+							"image": "twitter"
+						}, {
+							"name": "Facebook",
+							"isActive": true,
+							"url": "https://www.facebook.com/sapportal",
+							"image": "facebook"
+						}, {
+							"name": "YouTube",
+							"isActive": true,
+							"url": "https://www.youtube.com/SAPNetWeaverPortals",
+							"image": "youtube"
+						}, {
+							"name": "Instagram",
+							"isActive": true,
+							"url": "https://www.instagram.com/sap/",
+							"image": "instagram"
+						}, {
+							"name": "LinkedIn",
+							"url": "https://www.linkedin.com/company/sap",
+							"isActive": true,
+							"image": "linkedin"
+						}, {
+							"name": "Tumblr",
+							"isActive": false,
+							"image": "tumblr"
+						}, {
+							"name": "Google+",
+							"isActive": false,
+							"image": "googleplus"
+						}]
+					}
+				}
+			}
+		}
+	}
+}

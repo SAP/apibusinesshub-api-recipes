@@ -1,0 +1,39 @@
+{
+  "projectType": [
+    "sap.site.template"
+  ],
+  "generation": [
+    {
+      "templateId": "sitetemplatePlugin.starterSiteTemplate",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Wed, 03 Aug 2016 22:01:03 GMT"
+    },
+    {
+      "templateId": "sitetemplatePlugin.starterPageTemplate",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Fri, 05 Aug 2016 01:34:27 GMT"
+    },
+    {
+      "templateId": "sitetemplatePlugin.starterPage",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Fri, 05 Aug 2016 18:27:34 GMT"
+    },
+    {
+      "templateId": "sitetemplatePlugin.starterWidgetTemplate",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Fri, 05 Aug 2016 22:10:38 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "hcpdeploy": {
+    "account": "p1941349661trial",
+    "name": "devportalsitetemp",
+    "lastVersionWeTriedToDeploy": "1.0.0"
+  }
+}

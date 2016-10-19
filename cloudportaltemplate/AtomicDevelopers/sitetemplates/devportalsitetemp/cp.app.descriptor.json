@@ -1,0 +1,8 @@
+[{
+	"id": "hcp://devportalsitetemp/devportal/site.json",
+	"name": "devportal",
+	"description": "",
+	"thumbnail": "devportal/thumbnail.png",
+	"path": "devportal",
+	"_entityType": "PORTAL_SITE_V2_TEMPLATE_SITE"
+}]

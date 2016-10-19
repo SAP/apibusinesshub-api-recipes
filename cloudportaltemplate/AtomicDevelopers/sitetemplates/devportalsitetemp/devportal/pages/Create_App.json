@@ -1,0 +1,251 @@
+{
+	"_version": "1.3.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "hcp://devportalsitetemp/devportal/pages/Create_App.json",
+		"baseId": "hcp://devportalsitetemp/devportal/pageTemplates/2ColumnPage/manifest.json",
+		"title": "Create App",
+		"description": "",
+		"crossNavigation": {
+			"context": {},
+			"inbounds": {
+				"0": {
+					"semanticObject": "Create_App",
+					"action": "Display"
+				}
+			}
+		}
+	},
+	"sap.cloud.portal": {
+		"nodes": {
+			 "section1": {
+				"sectionAlias": "body.content1",
+				"_version": "1.3.0",
+				"sap.app": {
+					"_version": "1.1.0",
+					"id": "hcp://apimngmnt2/manifest.json",
+					"type": "application",
+					"i18n": "i18n/i18n.properties",
+					"applicationVersion": {
+						"version": "1.0.0"
+					},
+					"title": "Create API App",
+					"description": "{{appDescription}}",
+					"sourceTemplate": {
+						"id": "ui5template.basicSAPUI5ApplicationProject",
+						"version": "1.32.0"
+					}
+				},
+				"sap.ui": {
+					"_version": "1.1.0",
+					"technology": "UI5",
+					"icons": {
+						"icon": "",
+						"favIcon": "",
+						"phone": "",
+						"phone@2": "",
+						"tablet": "",
+						"tablet@2": ""
+					},
+					"deviceTypes": {
+						"desktop": true,
+						"tablet": true,
+						"phone": true
+					},
+					"supportedThemes": [
+						"sap_hcb",
+						"sap_bluecrystal"
+					]
+				},
+				"sap.ui5": {
+					"_version": "1.1.0",
+					"rootView": {
+						"viewName": "apimngmnt2.view.View1",
+						"type": "XML"
+					},
+					"routing": {
+						"config": {
+							"routerClass": "sap.m.routing.Router",
+							"viewType": "XML",
+							"viewPath": "apimngmnt2.view",
+							"controlId": "app",
+							"controlAggregation": "pages"
+						},
+						"routes": [
+							{
+								"pattern": "",
+								"name": "list",
+								"target": "list"
+							},
+							{
+								"pattern": "Application/{applicationId}",
+								"name": "application",
+								"target": "application"
+							}
+						],
+						"targets": {
+							"list": {
+								"viewName": "View1",
+								"viewId": "View1"
+							},
+							"application": {
+								"viewName": "View2",
+								"viewId": "View2",
+								"viewLevel": 1,
+								"transition": "flip"
+							}
+						}
+					},
+					"dependencies": {
+						"minUI5Version": "1.30.0",
+						"libs": {
+							"sap.ui.core": {},
+							"sap.m": {},
+							"sap.ui.layout": {}
+						}
+					},
+					"contentDensities": {
+						"compact": true,
+						"cozy": true
+					},
+					"models": {
+						"i18n": {
+							"type": "sap.ui.model.resource.ResourceModel",
+							"settings": {
+								"bundleName": "apimngmnt2.i18n.i18n"
+							}
+						}
+					},
+					"resources": {
+						"css": [
+							{
+								"uri": "css/style.css"
+							}
+						]
+					},
+					"componentName": "apimngmnt2"
+				},
+				"sap.platform.hcp": {
+					"uri": "",
+					"_version": "1.1.0",
+					"appName": "apimngmnt2"
+				},
+				"sap.flp": {
+					"appType": "SAP_UI5_Component",
+					"config": {
+						"editable": true,
+						"deletable": true
+					}
+				},
+				"sap.cloud.portal": {}
+			},
+				"section2": {
+					"sectionAlias": "body.content2",
+					"_version": "1.3.0",
+					"sap.app": {
+						"_version": "1.1.0",
+						"id": "hcp://jamgroupfeedwidget/manifest.json",
+						"type": "application",
+						"i18n": "i18n/i18n.properties",
+						"applicationVersion": {
+							"version": "1.0.0"
+						},
+						"title": "Jam Group Feed",
+						"description": "Embed content from SAP Jam into your site pages",
+						"sourceTemplate": {
+							"id": "ui5template.basicSAPUI5ApplicationProject",
+							"version": "1.32.0"
+						}
+					},
+					"sap.ui": {
+						"_version": "1.1.0",
+						"technology": "UI5",
+						"icons": {
+							"icon": "",
+							"favIcon": "",
+							"phone": "",
+							"phone@2": "",
+							"tablet": "",
+							"tablet@2": ""
+						},
+						"deviceTypes": {
+							"desktop": true,
+							"tablet": true,
+							"phone": true
+						},
+						"supportedThemes": [
+							"sap_hcb",
+							"sap_bluecrystal"
+						]
+					},
+					"sap.ui5": {
+						"_version": "1.1.0",
+						"rootView": {
+							"viewName": "JamGroupFeedWidget.view.Main",
+							"type": "XML"
+						},
+						"dependencies": {
+							"minUI5Version": "1.30.0",
+							"libs": {
+								"sap.ui.core": {},
+								"sap.m": {},
+								"sap.ui.layout": {}
+							}
+						},
+						"contentDensities": {
+							"compact": true,
+							"cozy": true
+						},
+						"models": {
+							"i18n": {
+								"type": "sap.ui.model.resource.ResourceModel",
+								"settings": {
+									"bundleName": "JamGroupFeedWidget.i18n.i18n"
+								}
+							}
+						},
+						"resources": {
+							"css": [
+								{
+									"uri": "css/style.css"
+								}
+							]
+						},
+						"config": {
+							"jamUrl": "/destinations/jam/api/v1/OData",
+							"groups": "/Groups?$top=100",
+							"feedEntries": "/Groups('{groupId}')/FeedEntries",
+							"expandQuery": "?$expand=Creator,ThumbnailImage"
+						},
+						"routing": {
+							"config": {
+								"routerClass": "sap.hana.uis.flp.routing.Router"
+							}
+						},
+						"componentName": "JamGroupFeedWidget"
+					},
+					"sap.flp": {
+						"appType": "SAP_UI5_Component",
+						"config": {
+							"editable": true,
+							"deletable": true
+						}
+					},
+					"sap.platform.hcp": {
+						"uri": "",
+						"appName": "jamgroupfeedwidget",
+						"_version": "1.1.0"
+					},
+					"sap.cloud.portal": {
+						"show.portal.settings": "false",
+						"settings": {
+							"groupId": {
+								"displayName": "Jam group ID",
+								"value": ""
+							}
+						}
+					}
+			}
+		}
+	}
+}

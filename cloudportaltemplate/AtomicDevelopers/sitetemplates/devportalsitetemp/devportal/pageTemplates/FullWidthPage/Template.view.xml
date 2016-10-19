@@ -1,0 +1,44 @@
+<mvc:View controllerName="cpv2.templates.FullWidthPage.Template" height="100%" xmlns:appContainer="sap.ushell.components.container"
+	xmlns:commons="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:cpControls="sap.hana.uis.flp.control" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" class='cpv2-page-1280'>
+	<Page showFooter="false" showHeader="false" enableScrolling="true">
+		<content>
+			<l:FixFlex width="100%">
+				<l:fixContent>
+					<l:BlockLayout id="headerLayout">
+						<l:BlockLayoutRow scrollable="false" >
+							<l:BlockLayoutCell class="blockcellWhite" width="3">
+								<cpControls:Widget alias="header.logo"></cpControls:Widget>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell  class="blockcellWhite"  width="1">
+								<cpControls:Widget alias="header.login"></cpControls:Widget>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+						<l:BlockLayoutRow	scrollable="false" >
+							<l:BlockLayoutCell  class="blockcell">
+								<cpControls:Widget alias="header.navbar"></cpControls:Widget>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+					<l:BlockLayout id="bodyLayout" class="blocklayoutBody">
+						<l:BlockLayoutRow	scrollable="false">
+							<l:BlockLayoutCell width="1" class="blockcell">
+								<cpControls:Widget alias="body.content1"></cpControls:Widget>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+					<l:BlockLayout id="footerlayout" class="blocklayoutFooter">
+						<l:BlockLayoutRow	scrollable="false">
+							<l:BlockLayoutCell width="3" class="blockcell">
+								<cpControls:Widget alias="footer.links"></cpControls:Widget>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell width="1" class="blockcell">
+								<cpControls:Widget alias="footer.social"></cpControls:Widget>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:fixContent>
+			</l:FixFlex>
+		</content>
+	</Page>
+</mvc:View>

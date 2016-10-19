@@ -1,0 +1,45 @@
+{
+	"_version": "1.1",
+	"identification": {
+		"id": "hcp://devportalsitetemp/devportal/catalogs/defaultCatalog.json",
+		"title": "Everyone",
+		"description": "",
+		"entityType": "catalog"
+	},
+	"payload": {
+		"appDescriptors": [
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/page1.json"
+			},
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/Apps.json"
+			},
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/API_Products.json"
+			},
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/Create_App.json"
+			},
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/ProductsSocial.json"
+			},
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/SubscriptionsNoJam.json"
+			},			
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/About.json"
+			},
+			{
+				"namespace": "",
+				"id": "hcp://devportalsitetemp/devportal/pages/About2.json"
+			}
+		]
+	}
+}

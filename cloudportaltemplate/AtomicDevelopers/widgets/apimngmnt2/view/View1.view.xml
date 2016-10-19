@@ -1,0 +1,95 @@
+<mvc:View 
+    controllerName="apimngmnt2.controller.View1" 
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+    xmlns="sap.m">
+	<App id="app">
+	<NavContainer id="wizardNavContainer" >
+			<pages>
+				<Page
+				title="Create New Subscription"
+				id="wizardContentPage"
+				showHeader="true">
+					<content>
+						<Wizard id="CreateProductWizard"
+						        finishButtonText="Create Application"
+								complete="wizardCompletedHandler">
+							<WizardStep id="AppNameStep"
+										title="Application Name"
+										validated="false"
+										activate="applicationNameValidation">
+								<Text class="sapUiSmallMarginBottom"
+									  text="Select a name for your application."/>
+							    <form:SimpleForm
+										editable="true">
+									<Label text="App Name" required="true"/>
+									<Input valueStateText="Enter 6 symbols or more"
+										   valueState="{/appNameState}" id="appName" liveChange="applicationNameValidation"
+										   placeholder="Enter name with length greater than 6" value="{/appName}"/>
+								</form:SimpleForm>
+							</WizardStep>
+							<WizardStep id="ProductAPIStep"
+										validated="false"
+										title="API Product Selection"
+										activate="productAPIValidation">
+								<Text text="Select the API products for your application"/>
+								<form:SimpleForm
+										editable="true">
+									<Label text="API Products" required="true"/>
+									<MultiComboBox selectionChange="handleProductAPISelectionChange" 
+									    selectionFinish="productAPIValidation" width="450px"
+                                		items="{
+                                                    path: 'APIMgmtModel>/APIMgmt.APIProducts'
+                                                }">
+                                		<core:Item key="{APIMgmtModel>name}" text="{APIMgmtModel>title} (ver. {APIMgmtModel>version})" />
+                                	</MultiComboBox>
+								</form:SimpleForm>
+							</WizardStep>
+							<WizardStep id="ConfirmStep"
+										complete="createApplication"
+										title="Verify Details">
+								<form:SimpleForm
+										editable="false">
+										<Label text="Application Name"/>
+											<Text  text="{/appName}"/>
+									<Label text="Selected API Products"/>
+									<Table id="idProductsTable"
+										width="65%"
+										inset="false"
+										items="{
+											path: '/selectedProductAPIs'
+										}">
+										<columns>
+											<Column
+												width="12em">
+												<Text text="Product Names" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<Text
+														text="{mProperties/text}" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</form:SimpleForm>
+							</WizardStep>
+						</Wizard>
+					</content>
+					<footer>
+						<Toolbar>
+							<ToolbarSpacer/>
+							<Button id="cancelBtn" text="Cancel" press="handleWizardCancel"/>
+						</Toolbar>
+					</footer>
+				</Page>
+			</pages>
+		</NavContainer>
+	</App>
+</mvc:View>

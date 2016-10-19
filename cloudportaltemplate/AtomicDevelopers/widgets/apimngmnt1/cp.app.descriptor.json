@@ -1,0 +1,10 @@
+[
+	{
+		"id": "hcp://apimngmnt1/manifest.json",
+		"_entityType": "PORTAL_SITE_V2_TEMPLATE_APP_CONFIG",
+		"path": "",
+		"name": "API Products",
+		"thumbnail": "sap-icon://product",
+		"preview": ""
+	}
+]
