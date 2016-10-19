@@ -11,7 +11,7 @@ The template comprises of 3 Fiori applications as follows:
   3. Manage Subscriptions
 
 ### Get the Source Code
-Clone the Git [repository](https://github.com/SAP/cloud-api-management-samples/tree/master/cloudportaltemplate) or download the latest release.
+Download the sample website instance [**CPT-API.mtar**](https://github.com/SAP/cloud-api-management-samples/blob/master/cloudportaltemplate/CPT-API.mtar) and follow the instructions below.
 
 ## Quick start guide
 #### Pre-requisites
