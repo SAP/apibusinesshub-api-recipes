@@ -1,4 +1,4 @@
-#SAP HANA Cloud Platform, API management Sample Scenarios setup
+# SAP HANA Cloud Platform, API management Sample Scenarios setup
 
 SAP HANA Cloud Platform, API management Sample Scenario is a fiori based application using which the sample api proxy bundles, policies could be browsed and then this bundle can be deployed into your api portal tenancy.
 
