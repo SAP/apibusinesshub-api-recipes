@@ -1,4 +1,4 @@
-##Basic Authentication in Proxy EndPoint to SAML Authentication for Target End Point
+## Basic Authentication in Proxy EndPoint to SAML Authentication for Target End Point
 
 Basic authentications allows a HTTP agent to pass in user name and password while making a call. The user name and password is passed in the http header Authorization
 
