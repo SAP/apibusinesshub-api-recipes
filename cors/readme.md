@@ -1,4 +1,4 @@
-#CORS 
+# CORS 
 Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain communication from the browser. By building on top of the XMLHttpRequest object, CORS allows developers to work with the same idioms as same-domain requests.
 HTTP requests from JavaScript are traditionally bound by the Same Origin Policy, which means that the Ajax requests must have the same domain and port. The common ways to get around this are using techniques like JSON-P or setting up a custom proxy. By supporting CORS requests, the server can add a few special response headers that would allow the browser to access the data from a different domain.
 CORS supports require coordination between both server and client. On the client side (browser side) most of the handling for CORS is automatically done by the browser on behalf of the client which is depicted below in the diagram.
