@@ -1,4 +1,4 @@
-#Welcome to the SAP HANA Cloud Platform, API management Samples GitHub Repository
+# Welcome to the SAP HANA Cloud Platform, API management Samples GitHub Repository
 
 [**SAP HANA Cloud Platform, API management**](https://hcp.sap.com/capabilities/integration/api-management.html) provides enterprises a comprehensive solution to address all API needs, with features such as API provisioning and publishing, API discovery and consumption, security and access control, analytics and reporting, monitoring and operations and developer portal.  
 
@@ -8,7 +8,7 @@ An *API Proxy* is a representation of a HTTP-based service that abstracts the ac
 
 The graphical user interface of API Management is itself API-based, permitting extensions and customizations. A sample is given in the [*cloudportaltemplate*](./cloudportaltemplate) sub folder.
 
-##Before Starting
+## Before Starting
 
 * Sign up [here](https://hcp.sap.com/try.html) for a free trial of *SAP HANA Cloud Platform*.
 
@@ -16,7 +16,7 @@ The graphical user interface of API Management is itself API-based, permitting e
 
 * Refer to the [SCN blog] (http://scn.sap.com/docs/DOC-71207) for an Overview of *SAP HANA Cloud Platform, API management*.
 
-##Available Samples List
+## Available Samples List
 
 | Scenarios | Description |
 | --- | --- |
@@ -30,20 +30,20 @@ The graphical user interface of API Management is itself API-based, permitting e
 | [Url Masking](./urlmask) | Sample showcasing the masking/rewriting of the target system host, basepath and replacing it with the proxy endpoint host and base path. |
 | [Verify API Key](./verifyapikey) | Sample showcasing the enforcement and verification of API key based access to the API Proxy. Sample contains examples to pass the API key either as header parameter or as query parameter. |
 
-##API Proxy Structure Format
+## API Proxy Structure Format
 
 API Proxies samples are available in each sample folder under the sub folder *APIProxy*. The sample shared are in the API Proxy structure of SAP HCP, API management which is described in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?4dfd54a7546c42cfb8dd157ab1355011.html). 
 
-##How to use the Sample
+## How to use the Sample
 
 * Click on the *.zip file available in each example folders  and then click on the "View Raw" Link or "Download" button to download the sample.
 * Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
 
-##Custom API Developer Portal Sample
+## Custom API Developer Portal Sample
 
 [Cloud Portal Template](./cloudportaltemplate) in the *cloudportaltemplate* sub folder contains a sample website project that uses SAP HCP, Portal Service to build a custom API Management Developer Portal. This is helpful in scenarios where API creators want to give their developers features not present in the standard API Management Developer Portal.
 
-##License
+## License
 These samples are provided as a starting point for your implementation and are provided without any warranty or support obligations.
 
 Copyright 2016 SAP SE
