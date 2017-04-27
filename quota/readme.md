@@ -1,4 +1,4 @@
-#Quota
+# Quota
 
 In SAP HANA Cloud Platform, API management, we offer a wide variety of rate limiting policies which can be used to control the flow of the traffic from the Client to the SAP HANA Cloud Platform,API Management. These policies are quota, spike arrest, concurrent rate limit policies. In this document we show case how we can use the quota policy to configure the number of request messages that could be allowed by an API Proxy over a time period or interval such as minute, hours or day.
 Quota policy consists of the following elements:-
