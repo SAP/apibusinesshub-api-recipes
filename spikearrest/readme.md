@@ -1,4 +1,4 @@
-#Spike Arrest
+# Spike Arrest
 
 In SAP HANA Cloud Platform, API management we offer the spike arrest which protects the target system against a sudden spike in the traffic. The spike arrest throttles the number of the incoming request processed by the API Proxy.
 It is recommended to put this policy as the first policy in the API Proxy execution and attached to the PreFlow of the Proxy End Point flow.
