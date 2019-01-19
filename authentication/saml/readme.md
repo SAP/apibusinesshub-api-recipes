@@ -1,4 +1,4 @@
-#SAML 
+# SAML 
 
 Security Assertion Markup Language (SAML) is an XML based, open-standard data format for exchanging authentication and authorization data.  SAML 2.0 is a standard for communication of assertions about principals typically users. The assertion can include the means by which a subject was authenticated, attributes associated with the subject and an attributes associated with the subject and an authorization decision for a given resource. The two main components of a SAML 2.0 landscape are an identity provider and a service or resource provider. The service or resource provider is a system entity that provide a set of applications with a common session management, identity management and trust management. The identity provider is a system entity that manages identity information for principals and provides authentication services to other trusted service provider. In other words, the service providers outsource the job of authenticating the user to the identity provider.
 
