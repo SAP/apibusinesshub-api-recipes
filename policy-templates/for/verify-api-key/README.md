@@ -2,8 +2,9 @@
 
 **Verify API Key** Policy Templates assists you in protecting APIs by Verifying the API Key
 
-**Verify API Key by Header*
-**Verify API Key by QueryParam* 
+**Verify API Key by Header**<Enter>
+
+**Verify API Key by QueryParam** 
 
  Secures your APIs by enforcing verification of the API Key when APIs are consumed. When you apply this policy template, API key needs to be passed as header/queryparam to access the API
 
