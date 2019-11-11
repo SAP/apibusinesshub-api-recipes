@@ -1,5 +1,5 @@
 # API recipes by Type
-\| [Browsing by Usecase](./api-recipes-by-usecase.md) \|  Browse by Type \|
+\| [Browsing by Usecase](./api-recipes-by-usecase.md) \|  Browse by Type \| [Request a Recipe](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Request&template=recipe-request.md&title=How+to++) \| [Report a broken link](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=documentation&template=bug_report.md&title=Broken%20Link) \|
 
 * [API Proxies](#api-proxies)
 * [Policy Templates](#policy-templates)

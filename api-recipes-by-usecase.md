@@ -1,5 +1,5 @@
 # API Recipes by Usecase
-\| Browsing by Usecase \|  [Browse by Type](./api-recipes-by-type.md) \|
+\| Browsing by Usecase \|  [Browse by Type](./api-recipes-by-type.md) \|[Request a Recipe](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Request&template=recipe-request.md&title=How+to++) \| [Report a broken link](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=documentation&template=bug_report.md&title=Broken%20Link) \|
 
 * [Authentication](#Authentication)
 * [Caching](#caching)
