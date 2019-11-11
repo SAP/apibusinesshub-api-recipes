@@ -7,7 +7,7 @@
 * [Cross Origin Resource Sharing](#cors)
 * [Debugging and Tracing](#debugging-and-tracing)
 * [Security](#security)
-* [Traffic Management](#traffic)
+* [Traffic Management](#traffic-management)
 ---
 ## Authentication
 
