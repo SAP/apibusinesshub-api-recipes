@@ -1,8 +1,8 @@
 # API recipes by Type
 \| [Browsing by Usecase](./api-recipes-by-usecase.md) \|  Browse by Type \|
 
-* [API Proxies](./api-recipes-by-usecase.md#api-proxies)
-* [Policy Templates](./api-recipes-by-usecase.md#policy-templates)
+* [API Proxies](#api-proxies)
+* [Policy Templates](#policy-templates)
 ---
 ## API Proxies
 [How to consume an API Proxy?](https://help.sap.com/viewer/66d066d903c2473f81ec33acfe2ccdb4/Cloud/en-US/9342a932441e45cd9636eb0a01a89958.html)
