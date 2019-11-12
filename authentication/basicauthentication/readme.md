@@ -1,7 +1,12 @@
-#Basic Authentication
+# Basic Authentication
 
-Basic authentications allows a HTTP agent to pass in user name and password while making a call. The user name and password is passed in the http header Authorization
+\| [Recipes by Usecase](./api-recipes-by-usecase.md) \| [Recipes by Type](./api-recipes-by-type.md) \| [Request Enhancement](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Fix,enhancement&template=recipe-request.md&title=Improve%20basic-authentication-api-proxy ) \| [Report a bug](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Fix,bug&template=bug_report.md&title=Issue%20with%20basic-authentication-api-proxy ) \| [Fix documentation](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Fix,documentation&template=bug_report.md&title=Docu%20fix%20basic-authentication-api-proxy ) \|
 
+Basic authentication allows a HTTP agent to pass in user name and password while making a call. The user name and password is passed in the http header Authorization.
+
+[Download API Proxy](BasicAuthentication.zip)
+
+## About BasicAuth policy
 The Authorization field is constructed as follows:-
 
 1. The username and password are combined with a single colon.
@@ -25,8 +30,8 @@ The Basic Authentication policy contains the following elements:-
 
 Click [here](https://help.hana.ondemand.com/apim_od/frameset.htm?693c0d1720644d57918ed77acc6a95ef.html) for more information on the Basic Authentication Policy
 
-# How to use the sample
+## How to use the sample
 
 * Click on [BasicAuthentication.zip](./BasicAuthentication.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
-* Import the Downloaded API Proxy zip into your SAP HCP, API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
+* Import the Downloaded API Proxy zip into your SAP API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
 * Open the new imported API Proxy and then edit the assignuserdetails policy to pass in the service user name and password to be used for connecting to the target system.

@@ -17,10 +17,9 @@ A Policy Template is the best way to apply the same sequence of policies to mult
 
 * Sign up [here](https://hcp.sap.com/try.html) for a free trial of *SAP Cloud Platform*.
 
-* Sign up [here](http://scn.sap.com/community/api-management/blog/2016/02/02/free-trial-of-sap-api-management-on-hana-cloud-platform-is-available-now) for a free trial of *
-SAP API Management*.
+* Instructions for sign up [here](http://scn.sap.com/community/api-management/blog/2016/02/02/free-trial-of-sap-api-management-on-hana-cloud-platform-is-available-now) for a free trial of *SAP API Management*.
 
-* Refer to the [blog](http://scn.sap.com/docs/-71207) for an Overview of *SAP API Management*## How to consume the Recipes?
+* Refer to the [blog](http://scn.sap.com/docs/-71207) for an Overview of *SAP API Management*
 
 ## How to consume the recipes?
 Please refer to the help documentation to [import an API Proxy](https://help.sap.com/viewer/66d066d903c2473f81ec33acfe2ccdb4/Cloud/en-US/9342a932441e45cd9636eb0a01a89958.html)
