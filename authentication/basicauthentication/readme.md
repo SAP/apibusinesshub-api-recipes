@@ -21,7 +21,7 @@ and testing.
 The Basic Authentication policy contains the following elements:-
 
 | Property Name        | Description           | Example  |
-| ------------- |:-------------:| -----:|
+| ------------- |-------------| -----|
 | Operation     | The operation element describes if the policy should be used to encode the user, pass or to decode the variable to generate user, pass from the basic authentication format | Encode to generate the basic authentication credential and Decode to decode the passed Basic authentication credential |
 | User     | In case of Encode operation, references the elements containing the user name and for Decode operation, references the elements where the user information should be stored  | &lt;User ref='request.queryname.user'&gt; |
 | Password     | In case of Encode operation, references the elements containing the Password and for Decode operation, references the elements where the password information should be stored  | &lt;Password ref='request.queryname.pass'&gt; |

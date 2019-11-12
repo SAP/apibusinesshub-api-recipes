@@ -1,6 +1,5 @@
 # SAML
 
-
 \| [Recipes by Usecase](./api-recipes-by-usecase.md) \| [Recipes by Type](./api-recipes-by-type.md) \| [Request Enhancement](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Fix,enhancement&template=recipe-request.md&title=Improve%20SAML-auth-api-proxy ) \| [Report a bug](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Fix,bug&template=bug_report.md&title=Issue%20with%20SAML-auth-api-proxy ) \| [Fix documentation](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Fix,documentation&template=bug_report.md&title=Docu%20fix%20SAML-auth-api-proxy ) \|
 
 In this example, the SAP RealSpend Service from SAP HANA Cloud Platform has been used to demonstrate the SAML authentication, the details of this service is available in [SCN](http://scn.sap.com/community/simple-finance/blog/2016/04/03/try-out-sap-budget-management-beta-on-sap-hana-cloud-platform).
@@ -25,7 +24,7 @@ All the calls required for SAML authentication would be enabled via a JavaScript
 
 
 
-# How to use the sample
+## How to use the sample
 
 * Click on [SAML.zip](./SAML.zip) and then click on the "View Raw" Link or "Download" button to download the sample.
 * Import the Downloaded API Proxy zip into your SAP API management tenancy. Additional instruction for this is available in [link](https://help.hana.ondemand.com/apim_od/frameset.htm?9342a932441e45cd9636eb0a01a89958.html).
