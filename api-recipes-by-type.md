@@ -20,21 +20,21 @@
 | [Verify API Key](./verifyapikey) | Sample showcasing the enforcement and verification of API key based access to the API Proxy. Sample contains examples to pass the API key either as header parameter or as query parameter. | [Authentication](./api-recipes-by-usecase.md#Authentication) |
 
 ## Policy Templates
-[How to consume a Policy Template?](./policy-templates/README.md)
+[How to consume a Policy Template?](./recipes/README.md)
 
 Policy Template|Description|Usecase |
 ---|---| --- |
-[API Management debugging and traceability](./policy-templates/for/api-management-debugging-and-traceability)|Assists in API proxy execution performance assessment| [Debugging and Tracing](./api-recipes-by-usecase.md#debugging-and-tracing) |
-[CORS](./policy-templates/for/CORS)| Supports your API to be consumed by the application where CORS support is not available| [Cross Origin Resource Sharing](./api-recipes-by-usecase.md#cors)|
-[Connect to SAP Cloud Foundry services](./policy-templates/for/connect-to-sap-cloud-foundry-services)|Helps to manage mircoservices running in cloud foundry using SAP Cloud Platform API Management| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
-[Connect to SAP Cloud Platform services](./policy-templates/for/connect-to-sap-cloud-platform-services)|Helps in consuming APIs hosted on SAP Cloud Platform and protected by Cloud Platform OAuth| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
-[Connect to SAP Concur](./policy-templates/for/connect-to-sap-concur)|Facilitates easy consumption of Concur APIs protected by OAuth| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
-[Connect to SAP SuccessFactors](./policy-templates/for/connect-to-sap-successfactors)| Helps to consume SAP SuccessFactors APIs protected by OAuth| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
-[JSON Threat Protection](./policy-templates/for/json-threat-protection)|Assists you in securing your APIs from JSON threats for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
-[Metadata Cache for Odata APIs](./policy-templates/for/metadata-cache-for-odata-apis)|Helps to improve performance of Odata API Proxies by caching metadata across invocations| [Caching](./api-recipes-by-usecase.md#caching) |
-[Principal propagation via SAML](./policy-templates/for/principal-propagation-via-saml)|Assists you in SAML User propagation from the application to back-end system via SAP API Management| [Authentication](./api-recipes-by-usecase.md#Authentication) |
-[Quota With 429 Status Code](./policy-templates/for/quota-with-429-status-code)|Helps to set quota and 429 status message| [Traffic Management](./api-recipes-by-usecase.md#traffic-management) |
-[SQL Threat Protection](./policy-templates/for/sql-threat-protection)|Assists you in securing your APIs from SQL threat for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
-[URL Masking](./policy-templates/for/url-masking)|Assists in protecting backend system for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
-[Verify APIKey](./policy-templates/for/verify-api-key)|Assists you in protecting APIs by Verifying the API Key | [Authentication](./api-recipes-by-usecase.md#Authentication) |
-[XML Threat Protection](./policy-templates/for/xml-threat-protection)|Protects APIs from XML threats for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
+[API Management debugging and traceability](./recipes/for/api-management-debugging-and-traceability)|Assists in API proxy execution performance assessment| [Debugging and Tracing](./api-recipes-by-usecase.md#debugging-and-tracing) |
+[CORS](./recipes/for/CORS)| Supports your API to be consumed by the application where CORS support is not available| [Cross Origin Resource Sharing](./api-recipes-by-usecase.md#cors)|
+[Connect to SAP Cloud Foundry services](./recipes/for/connect-to-sap-cloud-foundry-services)|Helps to manage mircoservices running in cloud foundry using SAP Cloud Platform API Management| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
+[Connect to SAP Cloud Platform services](./recipes/for/connect-to-sap-cloud-platform-services)|Helps in consuming APIs hosted on SAP Cloud Platform and protected by Cloud Platform OAuth| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
+[Connect to SAP Concur](./recipes/for/connect-to-sap-concur)|Facilitates easy consumption of Concur APIs protected by OAuth| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
+[Connect to SAP SuccessFactors](./recipes/for/connect-to-sap-successfactors)| Helps to consume SAP SuccessFactors APIs protected by OAuth| [Consume APIs  of an Applications or Platform](./api-recipes-by-usecase.md#Connectivity) |
+[JSON Threat Protection](./recipes/for/json-threat-protection)|Assists you in securing your APIs from JSON threats for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
+[Metadata Cache for Odata APIs](./recipes/for/metadata-cache-for-odata-apis)|Helps to improve performance of Odata API Proxies by caching metadata across invocations| [Caching](./api-recipes-by-usecase.md#caching) |
+[Principal propagation via SAML](./recipes/for/principal-propagation-via-saml)|Assists you in SAML User propagation from the application to back-end system via SAP API Management| [Authentication](./api-recipes-by-usecase.md#Authentication) |
+[Quota With 429 Status Code](./recipes/for/quota-with-429-status-code)|Helps to set quota and 429 status message| [Traffic Management](./api-recipes-by-usecase.md#traffic-management) |
+[SQL Threat Protection](./recipes/for/sql-threat-protection)|Assists you in securing your APIs from SQL threat for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
+[URL Masking](./recipes/for/url-masking)|Assists in protecting backend system for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
+[Verify APIKey](./recipes/for/verify-api-key)|Assists you in protecting APIs by Verifying the API Key | [Authentication](./api-recipes-by-usecase.md#Authentication) |
+[XML Threat Protection](./recipes/for/xml-threat-protection)|Protects APIs from XML threats for APIs managed by API Management| [Security](./api-recipes-by-usecase.md#security) |
