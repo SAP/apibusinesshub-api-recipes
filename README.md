@@ -1,14 +1,15 @@
 # Welcome to SAP API Business Hub Community for API Recipes
+\| [Browse by Topic](./api-recipes-by-usecase.md) \| [Browse by Type](./api-recipes-by-type.md) \| [Request a Recipe](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=Recipe%20Request&template=recipe-request.md&title=How+to++) \| [Report a broken link](https://github.com/SAP-samples/apibusinesshub-api-recipes/issues/new?assignees=&labels=documentation&template=bug_report.md&title=Broken%20Link) \|
 
-[**SAP API Management**](https://www.sap.com/products/cloud-platform/capabilities/integration.api-management.html) provides enterprises a comprehensive solution to address all API needs, with features such as API provisioning and publishing, API discovery and consumption, security and access control, analytics and reporting, monitoring and operations and developer portal, [learn more](https://help.sap.com/viewer/66d066d903c2473f81ec33acfe2ccdb4/Cloud/en-US/0aef7634df25497896abf18faac8a1ce.html).  
+[**SAP API Management**](https://www.sap.com/products/cloud-platform/capabilities/integration.api-management.html) provides enterprises a comprehensive solution to address all API needs, with features such as API provisioning and publishing, API discovery and consumption, security and access control, analytics and reporting, monitoring and operations and developer portal, [learn more](https://help.sap.com/viewer/product/SAP_CLOUD_PLATFORM_API_MANAGEMENT/Cloud/en-US).  
 
 This repository provides samples of API proxies, policy templates and applications, showcasing the capabilities of *SAP API Management* to deliver APIs protected by state-of-the-art authentication mechanisms and security policies (API Keys, basic authentication, SAML tokens, SQL threat protection) to effectively secure access to your data and services and protecting them for consumption in the cloud using quotas, spike arrests and URL rewriting.
 
 The graphical user interface of API Management is itself API-based, permitting extensions and customizations. A sample is given in the [*cloudportaltemplate*](./cloudportaltemplate) sub folder.
 
 ### What is an API Proxy?
-An *API Proxy* is a representation of a HTTP-based service that abstracts the actual proxy endpoint properties on one end and the actual target endpoint (the endpoint that is relevant for the end user to invoke) on the other end. Additionally it includes properties that describe the policies that can be invoked on the API.\
- *Policies* define a set of rules (such as enforcing security and controlling traffic) that is applied on the API. More information on types of supported policies is available at [help.sap.com](https://help.hana.ondemand.com/apim_od/frameset.htm?7e4f3e590f164996994cddc8e48bf7f5.html)
+An *API Proxy* is a representation of a HTTP-based service that abstracts the actual proxy endpoint properties on one end and the actual target endpoint (the endpoint that is relevant for the end user to invoke) on the other end. Additionally it includes properties that describe the policies that can be invoked on the API, [learn more](https://help.sap.com/viewer/66d066d903c2473f81ec33acfe2ccdb4/Cloud/en-US/8962643388fc4df6b7a165baa14475d9.html).\
+ *Policies* define a set of rules (such as enforcing security and controlling traffic) that is applied on the API, [learn more](https://help.hana.ondemand.com/apim_od/frameset.htm?7e4f3e590f164996994cddc8e48bf7f5.html)
 
 ### What is a Policy Template?
 A Policy Template is the best way to apply the same sequence of policies to multiple API Proxies. The policy templates can be shared and reused, [learn more](https://blogs.sap.com/2017/08/28/policy-management-made-easy-with-templates-in-sap-api-management/).  
@@ -29,7 +30,7 @@ Refer to this blog on  [how to consume policy templates](https://blogs.sap.com/2
 * [Apply a policy template](https://help.sap.com/viewer/66d066d903c2473f81ec33acfe2ccdb4/Cloud/en-US/269442f98bc343eb8d4deb09f87a0680.html)
 
 ## Available recipes
-* [Browse by use case](api-recipes-by-usecase.md)
+* [Browse by topic](api-recipes-by-usecase.md)
 * [Browse by type](api-recipes-by-type.md)
 
 ## Custom API Developer Portal Sample
