@@ -1,0 +1,19 @@
+{
+  "xsappname": "firstapp",
+  "tenant-mode": "shared",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Display",
+      "description": "display"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Required to view things in our solution",
+      "scope-references"     : [
+        "$XSAPPNAME.Display"
+      ]
+    }
+  ]
+}

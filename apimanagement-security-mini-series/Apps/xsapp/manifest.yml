@@ -1,0 +1,14 @@
+---
+applications:
+- name: approuter
+  routes:
+    - route: approuter-firstapp.cfapps.eu20.hana.ondemand.com
+  path: approuter
+  memory: 128M
+  buildpacks:
+    - nodejs_buildpack
+  env:
+    TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.eu20.hana.ondemand.com'
+    destinations: '[{"name":"app-destination", "url" :"https://firstapp-forgiving-squirrel-te.cfapps.eu20.hana.ondemand.com", "forwardAuthToken": true}]'
+  services:
+    - my-xsuaa

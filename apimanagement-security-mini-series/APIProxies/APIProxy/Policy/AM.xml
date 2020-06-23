@@ -1,0 +1,11 @@
+<!-- This policy can be used to create or modify the standard HTTP request and response messages -->
+<AssignMessage async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+ 
+	<Add>
+    <Headers>
+      <Header name="apikey">XXXXXXXXXXXXXXXXXXXXXXX</Header>
+    </Headers>
+  </Add>
+	<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+	<AssignTo createNew="false" transport = "http" type="request"></AssignTo>
+</AssignMessage>

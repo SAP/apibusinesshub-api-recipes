@@ -1,0 +1,12 @@
+#clientSecret=<< Existing password/certificate removed on export >>
+#
+#Sat Jun 20 15:20:58 UTC 2020
+Type=HTTP
+clientId=opproxies-client-id
+Authentication=OAuth2UserTokenExchange
+Name=MyErpSystem_CASE3
+trustAll=true
+tokenServiceURL=https\://yourtokenhost.euXX.hana.ondemand.com/oauth/token
+ProxyType=Internet
+URL=https\://yourvirtualhost.prod.apimanagement.euXX.hana.ondemand.com\:443/bponpremauth
+tokenServiceURLType=Dedicated
