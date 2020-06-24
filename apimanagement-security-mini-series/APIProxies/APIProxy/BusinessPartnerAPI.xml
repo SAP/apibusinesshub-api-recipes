@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy>
+    <name>BusinessPartnerAPI</name>
+    <title>BusinessPartnerAPI</title>
+    <description>&lt;p&gt;BusinessPartnerAPI&lt;/p&gt;</description>
+    <service_code>REST</service_code>
+    <life_cycle>
+        <changed_by>xxx@sap.com</changed_by>
+        <created_by>xxx@sap.com</created_by>
+    </life_cycle>
+    <proxyEndPoints>
+        <proxyEndPoint>
+            <proxyEndPointName>default</proxyEndPointName>
+            <apiResourceName>SWAGGER_JSON</apiResourceName>
+        </proxyEndPoint>
+    </proxyEndPoints>
+    <targetEndPoints>
+        <targetEndPoint>default</targetEndPoint>
+    </targetEndPoints>
+    <policies>
+        <policy type="RaiseFault">defaultRaiseFaultPolicy</policy>
+        <policy type="AssignMessage">AM</policy>
+    </policies>
+    <fileResources/>
+</APIProxy>

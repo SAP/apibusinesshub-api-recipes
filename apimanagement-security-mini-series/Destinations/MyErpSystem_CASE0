@@ -1,0 +1,8 @@
+#
+#Sat Jun 20 15:20:54 UTC 2020
+trustAll=true
+URL=https\://yourvirtualhost.prod.apimanagement.euXX.hana.ondemand.com/bp
+Name=MyErpSystem_CASE0
+ProxyType=Internet
+Type=HTTP
+Authentication=NoAuthentication

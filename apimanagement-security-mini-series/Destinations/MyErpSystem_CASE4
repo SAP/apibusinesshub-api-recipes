@@ -1,0 +1,16 @@
+#clientKey=<< Existing password/certificate removed on export >>
+#tokenServicePassword=<< Existing password/certificate removed on export >>
+#
+#Sat Jun 20 15:20:59 UTC 2020
+Type=HTTP
+authnContextClassRef=urn\:oasis\:names\:tc\:SAML\:2.0\:ac\:classes\:PreviousSession
+audience=https\://iyourtokenhost.authentication.euXX.hana.ondemand.com
+Authentication=OAuth2SAMLBearerAssertion
+trustAll=true
+Name=MyErpSystem_CASE4
+tokenServiceURL=https\://yourtokenhost.authentication.euXX.hana.ondemand.com/oauth/token/alias/tokenpath
+ProxyType=Internet
+URL=https\://yourvirtualhost.prod.apimanagement.euXX.hana.ondemand.com\:443/bponpremauth
+nameIdFormat=urn\:oasis\:names\:tc\:SAML\:1.1\:nameid-format\:emailAddress
+tokenServiceURLType=Dedicated
+tokenServiceUser=opproxies-client-id
