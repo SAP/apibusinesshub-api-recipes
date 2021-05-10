@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIResource>
+    <name>SWAGGER_JSON</name>
+    <title>SWAGGER_JSON</title>
+    <canShowGet>true</canShowGet>
+    <canShowPost>true</canShowPost>
+    <canShowPut>true</canShowPut>
+    <canShowDelete>true</canShowDelete>
+    <canShowHead>true</canShowHead>
+    <canShowOption>true</canShowOption>
+    <canShowPatch>true</canShowPatch>
+    <isGetChecked>false</isGetChecked>
+    <isPostChecked>false</isPostChecked>
+    <isPutChecked>false</isPutChecked>
+    <isDeleteChecked>false</isDeleteChecked>
+    <isHeadChecked>false</isHeadChecked>
+    <isOptionChecked>false</isOptionChecked>
+    <isPatchChecked>false</isPatchChecked>
+    <resource_path>/SWAGGER_JSON</resource_path>
+    <proxyEndPointName>default</proxyEndPointName>
+    <documentations>
+        <documentation locale="en" mimeType="HTML">SWAGGER_JSON</documentation>
+    </documentations>
+</APIResource>

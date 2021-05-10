@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging async="false" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+    <Syslog>
+     <!-- <Message>{sapim.logmessage}</Message> -->
+         <Message>{"index_name":"apim","systemTimeStamp":"{system.time.year}-{system.time.month}-{system.time.day}T{system.time.hour}:{system.time.minute}:{system.time.second}.{system.time.millisecond}Z","messageId":"{messageid}","statusCode":"{message.status.code}","contentType":"{request.header.Content-Type}","contentLength":"{client.received.content.length}","uri":"{request.uri}","path":"{request.path}","verb":"{request.verb}","meta":{"organization":"{organization.name}","product":"{apigee.apiproduct.name}","application":"{apigee.developer.app.name}","env ":"{environment.name}","virtualhost":"{virtualhost.name}"},"proxy":{"name":"{apiproxy.name}","revision":"{apiproxy.revision}","basepath":"{proxy.basepath}","suffix":"{proxy.pathsuffix}","clientIP":"{client.ip}"},"target":{"host":"{target.host}","basepath":"{request.uri}","statusCode":"{target.response.status.code}","contentLength":"{target.received.content.length}","targetURL":"{request.url}"},"error":{"isError":"{is.error}","isPolicyError":"{apigee.edge.execution.is_policy_error}","isTargetError":"{apigee.edge.execution.is_target_error}","policyErrorPolicyName":"{apigee.edge.execution.fault_policy_name}","policyErrorFlowName":"{apigee.edge.execution.fault_flow_name}","error":"{error}","content":"{error.content}","message":"{error.message}","statusCode":"{error.status.code}","reasonPhrase":"{error.reason.phrase}","transportMessage":"{error.transport.message}","state":"{error.state}"}}</Message> 
+        <Host>0.tcp.ngrok.io</Host>
+        <Port>12316</Port>
+        <Protocol>TCP</Protocol>
+        <SSLInfo>
+              <Enabled>false</Enabled>
+        </SSLInfo> 
+    </Syslog>
+</MessageLogging>

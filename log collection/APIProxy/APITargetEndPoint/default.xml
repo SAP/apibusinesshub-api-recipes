@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndPoint>
+    <name>default</name>
+    <url>https://httpbin.org/status</url>
+    <provider_id>NONE</provider_id>
+    <additionalAPIProviders/>
+    <isDefault>true</isDefault>
+    <properties/>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps/>
+        </request>
+        <response>
+            <isRequest>true</isRequest>
+            <steps/>
+        </response>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps/>
+        </request>
+        <response>
+            <isRequest>true</isRequest>
+            <steps>
+                <step>
+                    <policy_name>loginteractions</policy_name>
+                    <condition> </condition>
+                    <sequence>1</sequence>
+                </step>
+            </steps>
+        </response>
+    </postFlow>
+    <conditionalFlows/>
+    <loadBalancerConfigurations>
+        <isRetry>false</isRetry>
+        <healthMonitor>
+            <isEnabled>false</isEnabled>
+        </healthMonitor>
+    </loadBalancerConfigurations>
+</TargetEndPoint>
