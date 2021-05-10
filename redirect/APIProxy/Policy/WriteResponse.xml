@@ -1,0 +1,7 @@
+<AssignMessage async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+	<Set>
+		<Payload>{calloutResponse.content}</Payload>
+	</Set>
+	<IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<AssignTo createNew="true" type="response">response</AssignTo>
+</AssignMessage>

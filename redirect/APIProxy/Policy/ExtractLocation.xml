@@ -1,0 +1,7 @@
+<!-- Extract content from the request or response messages, including headers, URI paths, JSON/XML payloads, form parameters, and query parameters -->
+<ExtractVariables async="true" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+	<Source>response</Source>
+	<Header name="Location">
+      <Pattern ignoreCase="true">https://{redirectUrl}/{redirectUrlPath}</Pattern>
+     </Header>
+</ExtractVariables>
