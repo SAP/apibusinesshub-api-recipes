@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIResource>
+    <name>generateToken</name>
+    <title>/generateToken</title>
+    <canShowGet>false</canShowGet>
+    <canShowPost>true</canShowPost>
+    <canShowPut>false</canShowPut>
+    <canShowDelete>false</canShowDelete>
+    <canShowHead>false</canShowHead>
+    <canShowOption>false</canShowOption>
+    <canShowPatch>false</canShowPatch>
+    <isGetChecked>false</isGetChecked>
+    <isPostChecked>true</isPostChecked>
+    <isPutChecked>false</isPutChecked>
+    <isDeleteChecked>false</isDeleteChecked>
+    <isHeadChecked>false</isHeadChecked>
+    <isOptionChecked>false</isOptionChecked>
+    <isPatchChecked>false</isPatchChecked>
+    <resource_path>/generateToken</resource_path>
+    <proxyEndPointName>default</proxyEndPointName>
+    <documentations>
+        <documentation locale="en" mimeType="HTML">generateToken</documentation>
+    </documentations>
+</APIResource>

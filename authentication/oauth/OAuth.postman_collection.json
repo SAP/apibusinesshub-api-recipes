@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "b140d484-f9ff-4549-8a4a-96c24c9352bf",
+		"name": "OAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate token for OAuth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "<Application Key in Application within APIBHE>",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "<CLient Secrect in in Application within APIBHE>",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{apim_host}/oauth/generateToken",
+					"protocol": "https",
+					"host": [
+						"{apim_host}"
+					],
+					"path": [
+						"oauth",
+						"generateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access resource which is OAuth Protected",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{apim_host}/oauth/resource",
+					"protocol": "https",
+					"host": [
+						"{apim_host}"
+					],
+					"path": [
+						"oauth",
+						"resource"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

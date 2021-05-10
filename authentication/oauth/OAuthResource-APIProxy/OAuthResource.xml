@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy>
+    <name>OAuthResource</name>
+    <title>OAuthResource</title>
+    <description>&lt;p&gt;&lt;/p&gt;</description>
+    <isVersioned>false</isVersioned>
+    <service_code>REST</service_code>
+    
+    <APIState>Active</APIState>
+    <life_cycle>
+        <changed_by>deep.ganguly@sap.com</changed_by>
+        <created_by>deep.ganguly@sap.com</created_by>
+    </life_cycle>
+    <proxyEndPoints>
+        <proxyEndPoint>
+            <proxyEndPointName>default</proxyEndPointName>
+            <apiResourceName>SWAGGER_JSON</apiResourceName>
+        </proxyEndPoint>
+    </proxyEndPoints>
+    <targetEndPoints>
+        <targetEndPoint>default</targetEndPoint>
+    </targetEndPoints>
+    <policies>
+        <policy type="OAuthV2">verifyAccess</policy>
+        <policy type="RaiseFault">defaultRaiseFaultPolicy</policy>
+    </policies>
+    <fileResources/>
+</APIProxy>

@@ -1,0 +1,7 @@
+<!-- Use this section of Policy snippet to read attribute values of access tokens, refresh tokens and authorization codes -->
+<GetOAuthV2Info async="false" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt"> 
+   <!--reference to the access token whose details have to be retrieved -->  
+   <AccessToken ref="request.access_token"/> 
+   <!-- reference to the client ID whose information should be retrieved --> 
+   <ClientId ref="request.header.client_id"></ClientId>
+</GetOAuthV2Info>

@@ -1,0 +1,10 @@
+<!-- Use this section of snippet to add custom attributes for an access token, refresh token or an authorization code -->
+<SetOAuthV2Info async="false" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+   <!-- reference to the access token -->
+   <AccessToken ref="request.access_token"/>
+   <!-- the attribute details that is to be modified -->
+   <Attributes>
+      <Attribute display="true" name="department.id">marketing</Attribute>
+      <Attribute display="true" name="scope">READ, WRITE</Attribute>
+   </Attributes>
+</SetOAuthV2Info>

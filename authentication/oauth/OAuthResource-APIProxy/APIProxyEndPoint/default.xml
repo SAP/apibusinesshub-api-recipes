@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndPoint default="true">
+    <name>default</name>
+    <base_path>/oauth/resource</base_path>
+    <properties/>
+    <routeRules>
+        <routeRule>
+            <name>default</name>
+            <targetEndPointName>default</targetEndPointName>
+            <sequence>1</sequence>
+            <faultRules/>
+        </routeRule>
+    </routeRules>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps>
+                <step>
+                    <policy_name>verifyAccess</policy_name>
+                    <condition></condition>
+                    <sequence>1</sequence>
+                </step>
+            </steps>
+        </request>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+    </postFlow>
+    <conditionalFlows/>
+</ProxyEndPoint>
