@@ -2,7 +2,7 @@
 <APIProxy>
     <name>RedirectScenario</name>
     <title>Redirect</title>
-    <description>&lt;p&gt;Resources which are protected by Cross Site Scripting (XSS) will be available after the redirect.&amp;nbsp;&lt;/p&gt;</description>
+    <description>&lt;p&gt;Resources which are protected by Cross Site Scripting (XSS) will not be available after the redirect.&amp;nbsp;&lt;/p&gt;</description>
     <isVersioned>false</isVersioned>
     <service_code>REST</service_code>
     
