@@ -4,9 +4,16 @@ import re
 import os.path
 import requests
 
-my_path:str = os.path.abspath(os.path.dirname(__file__))
-generatedXml:str="./out/upload_me_in_target_subaccount.xml"
+print("********************************")
+print("********************************")
 
+my_path:str = os.path.abspath(os.path.dirname(__file__))
+outputFolder="./out"
+outputFilePath:str=os.path.join(my_path, outputFolder)
+if not os.path.exists(outputFilePath):
+    os.makedirs(outputFilePath)
+
+generatedXml:str=outputFolder+"/upload_me_in_target_subaccount.xml"
 
 parser = OptionParser()
 
@@ -41,21 +48,21 @@ if (authStr not in options.originAuthUri) or (https not in options.originAuthUri
     raise error("URI:"+options.originAuthUri+" has missing '.authentication.' or 'https://' therefore unable to extract subdomain and host")
 
 subdomainWithHttps,landscapeHost=options.originAuthUri.split(authStr)
-print("Host="+landscapeHost)
+print("*Host="+landscapeHost)
 
 z,subdomain=subdomainWithHttps.split(https)
-print("Subdomain="+subdomain)
+print("*Subdomain="+subdomain)
 
 
 ##########----Origin Certificate Operations starts-----#######
 certificateFilePath:str=os.path.join(my_path, options.originTrustLoc)
-print("Certificate is read from="+certificateFilePath)
+print("*Certificate is read from="+certificateFilePath)
 oTrustContent:str=readFile(certificateFilePath)
 #extract origin certificate
 start:str="-----BEGIN CERTIFICATE-----"
 end:str="-----END CERTIFICATE------"
 oCertificate:str=oTrustContent[len(start):-len(end)]
-print("------Extracting Certificate passed successfully----------------")
+print("*Extracting Certificate passed successfully")
 ##########----Origin Certificate Operations ends-----#######
 
 ##########---Origin SAML Metadata Operations start---------################
@@ -63,7 +70,7 @@ print("------Extracting Certificate passed successfully----------------")
 #download the metadata file
 idpMetaContentPath:str=os.path.join(my_path, options.originIdpMetaLoc)
 
-print("SAML IDP Metadata is read from="+idpMetaContentPath)
+print("*SAML IDP Metadata is read from="+idpMetaContentPath)
 oIdpMetaContent:str=readFile(idpMetaContentPath)
 #extract entityId
 regx:str="entityID=\"(.*?)\""
@@ -72,7 +79,7 @@ extractedEntityId:str = re.search(regx, oIdpMetaContent).group(1)
 if len(extractedEntityId)==0:
     raise error("failed to find entityID within the Metadata File")
 
-print("EntityID="+extractedEntityId)
+print("*EntityID="+extractedEntityId)
 ##########---Origin SAML Metadata Operations ends---------################
 
 ###########---Generate New Trust XML starts---------############################
@@ -125,8 +132,11 @@ generatedPath:str=os.path.join(my_path, generatedXml)
 f = open(generatedPath, "w")
 f.write(templateContent)
 f.close()
-print("Metadata file is generated in the 'out' folder, please upload the file in the subaccount(where APIM is hosted)->Trust Configuration->New Trust Configuration->Upload ")
+print("*Metadata file is generated in the 'out' folder, please upload the file in the target subaccount(where APIM is hosted)->Trust Configuration->New Trust Configuration->Upload ")
 ###########---Generate New Trust XML ends---------############################
+
+print("################################")
+print("################################")
 
 
 
