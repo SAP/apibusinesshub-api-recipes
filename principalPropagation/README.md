@@ -2,7 +2,7 @@
 <p align="center">
   <h1 align="center">Principal Propagation with SAP API Management</h1>
   <p align="center">
-    This documentation depicts the use cases and step by step configuration for Principal Propagation on SAP API Management on Cloud Foundry . 
+    This documentation depicts the step by step configuration for Principal Propagation on SAP API Management on Cloud Foundry . 
     <br />
   </p>
 </p>
@@ -15,23 +15,41 @@
       <a href="#about">About</a>
     </li>
     <li>
-      <a href="#Prerequisites">Prerequisites</a>
+      <a href="#prerequisites">Prerequisites</a>
     </li>
     <li>
-      <a href="#getting-started">Setup & Configuration</a>
+      <a href="#prepare">Prepare</a>
+       <ul>
+        <li><a href="#create-api-provider">Create API Provider</a></li>
+        <li><a href="#create-api-proxy">Create API Proxy</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#setup-and-configuration">Setup and Configuration</a>
       <ul>
-        <li><a href="#Prerequisites">Own CF Subaccount</a></li>
-        <li><a href="#installation">CF-CF Subaccount</a></li>
-        <li><a href="#installation">Subaccount on NEO</a></li>
-        <li><a href="#installation">External Accounts: Azure Active Directory</a></li>
+        <li><a href="#own-CF-sub-account">Own CF Subaccount</a>
+        <ul>
+        <li><a href="#own-CF-sub-account">Generate and Upload Destination</a></li>
+        <li><a href="#configure-api-proxy">Configure API Proxy</a></li>
+      </ul>
+        </li>
+        <li><a href="#cf-cf-subaccount">CF-CF Subaccount</a>
+         <ul>
+         <li><a href="#establish-trust-between-sub-accounts">Establish Trust Between sub-accounts</a></li>
+        <li><a href="#generate-and-upload-destination">Generate and Upload Destination</a></li>
+        <li><a href="#configure-api-proxy">Configure API Proxy</a></li>
+      </ul>
+        </li>
+        <li><a href="#neo-cf-subaccount">NEO-CF Subaccount</a></li>
+        <li><a href="#azure-active-directory">Azure Active Directory</a></li>
       </ul>
     </li>
      <li>
       <a href="#consumption">Consumption</a>
         <ul>
-        <li><a href="#installation">Postman Collection</a></li>
-        <li><a href="#prerequisites">CF Apps</a></li>
-        <li><a href="#installation">UI5 Application</a></li>
+        <li><a href="#postman-collection">Postman Collection</a></li>
+        <li><a href="#cf-apps">CF Apps</a></li>
+        <li><a href="#ui5-application">UI5 Application</a></li>
       </ul>
     </li>
   </ol>
@@ -44,8 +62,10 @@
 
 * [Overview of Principal Propagation ](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e2cbb48def4342048362039cc157b12e.html)
 * This documentation depicts the step-by-step configurations required to setup Principal Propagation for the following scenarios within the Cloud Foundry capability SAP API Management under the SAP Integration Suite in SAP BTP Platform.
+* A single API Proxy shall be configured to provide for Principal Propagation from the same and different sub-accounts within CF runtime of SAP APIM
 * The Configurations of the Cloud Connector and the backend systems are left out of scope.
-* The Configurations of SAP API Management applies to Prod,Canary,Trial landscape,this document only depicts the Trial setups. The configurations remain which same for other landscapes. 
+* The Configurations of SAP API Management applies to Prod,Canary,Trial landscape,this document only depicts the Trial setups. The configurations remain same for other landscapes.
+
 
 
 <!-- GETTING STARTED -->
@@ -83,10 +103,16 @@
    git clone https://github.com/SAP/apibusinesshub-api-recipes.git
    ```
 
-<!-- CONTRIBUTING -->
+
+## Prepare
+### Create API Provider
+
+### Create API Proxy
+
+<!-- Setup and Configuration -->
 ## Setup and Configuration
 
-### Own CF sub-account
+### Own CF Subaccount
 
 In this case , **the User token generation and the SAP API Management service is hosted within the same sub-account**. The below picture depicts the landscape. </br>
     ![](images/same_subaccount.png)</br>
