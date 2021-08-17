@@ -15,13 +15,13 @@
       <a href="#about">About</a>
     </li>
     <li>
-      <a href="#prerequisites">Pre-requisites</a>
+      <a href="#Prerequisites">Prerequisites</a>
     </li>
     <li>
       <a href="#getting-started">Setup & Configuration</a>
       <ul>
-        <li><a href="#prerequisites">Same CF Subaccount</a></li>
-        <li><a href="#installation">Different CF Subaccount</a></li>
+        <li><a href="#Prerequisites">Own CF Subaccount</a></li>
+        <li><a href="#installation">CF-CF Subaccount</a></li>
         <li><a href="#installation">Subaccount on NEO</a></li>
         <li><a href="#installation">External Accounts: Azure Active Directory</a></li>
       </ul>
@@ -49,38 +49,72 @@
 
 
 <!-- GETTING STARTED -->
-## Pre-requisites
+## Prerequisites
 
 1. [Activate your Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-2. Create Two sub-accounts within the Trial Global account
+2. Create Two sub-accounts within the Trial Global account </br>
   a. Sub-account name: **red** , Sub-domain name : red , Region of choice </br>
-  ![Blue sub-account creation](./images/blue_creation.png)
+  ![Blue sub-account creation](./images/red_creation.png)</br>
   b. Sub-account name: **blue** , Sub-domain name : blue, Region of choice </br>
-  ![Red sub-account creation](./images/red_creation.png)
+  ![Red sub-account creation](./images/blue_creation.png)</br>
 
 3. In sub-account:**blue** enable the Integration Suite and add SAP API Management cabaility by [Setup Integration Suite Trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html)
 4. Enable Cloud Foundry in both sub-accounts </br>
 5. In sub-account:**blue** </br>
-  a. Click on Entitlements-> Configure Entitlements -> Add Service Plans-> API Management, API Portal , enable **on-premise connectivity and apiportal-apiaccess** and save </br>
-    ![Entitlement](./images/entitle_apim_plans.png)
-  b. Enable Service Instances: **API Management , API Portal** , Plan: **on-premise-connectivity** , Instance Name: **blueop** </br>
-    ![](images/blue_op_proxy.png)
-  c. Enable Service Instances: **Authorization and Trust Management Service** , Plan: **application** , Instance Name: **bluexsuaa** </br>
-    ![](images/blue_xsuaa.png)
-  d. Enable Service Instances: **Destination** , Plan: **lite** , Instance Name: **bluedest** </br>
-    ![](images/blue_dest.png)
+  a. Click on Entitlements-> Configure Entitlements -> Add Service Plans-> API Management, API Portal , enable and save </br> **on-premise connectivity** </br> **apiportal-apiaccess** </br></br>
+    ![Entitlement](./images/entitle_apim_plans.png)</br>
+  b. Enable </br> Service Instances: **API Management , API Portal** </br> Plan: **on-premise-connectivity** </br> Instance Name: **blueop** </br></br>
+    ![](images/blue_op_proxy.png)</br>
+  c. Enable </br> Service Instances: **Authorization and Trust Management Service** </br> Plan: **application** </br> Instance Name: **bluexsuaa** </br></br>
+    ![](images/blue_xsuaa.png)</br>
+  d. Enable </br> Service Instances: **Destination** </br> Plan: **lite** </br> Instance Name: **bluedest** </br></br>
+    ![](images/blue_dest.png)</br>
   e. Create Service Keys for **blueop** , **bluexsuaa** , **bluedest** respectively </br>
   
 6. In sub-account:**red** </br>
-  a. Enable Service Instances: **Authorization and Trust Management Service** , Plan: **application** , Instance Name: **redxsuaa** </br>
-    ![](images/red_xsuaa.png)
-  b. Enable Service Instances: **Destination** , Plan: **lite** , Instance Name: **reddest** </br>
-    ![](images/red_dest.png)
+  a. Enable </br> Service Instances: **Authorization and Trust Management Service** </br> Plan: **application** </br> Instance Name: **redxsuaa** </br></br>
+    ![](images/red_xsuaa.png)</br>
+  b. Enable </br> Service Instances: **Destination** </br> Plan: **lite** </br> Instance Name: **reddest** </br></br>
+    ![](images/red_dest.png)</br>
   e. Create Service Keys for **redxsuaa** , **reddest** respectively </br>
-
+  
+7. Clone the repo
+   ```sh
+   git clone https://github.com/SAP/apibusinesshub-api-recipes.git
+   ```
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Setup and Configuration
+
+### Own CF sub-account
+
+In this case , **the User token generation and the SAP API Management service is hosted within the same sub-account**. The below picture depicts the landscape. </br>
+    ![](images/same_subaccount.png)</br>
+    Flow Summary:
+    
+    1. The User Logs in using the XSUAA service instance. A token is generated in exchange of username and password . This token contains the User Principle. 
+    2. The Client requests the API Proxy endpoint and passes the token as part of the header request
+    3. API Proxy verifies if the token is valid and requests Destination Service to exchange the token
+    4. The token is passed to the Cloud Connector which queries the backend to present the response
+    
+### Steps to enable the Flow
+#### Generate and Upload Destination
+#### Configure API Proxy
+
+## CF-CF subaccount 
+In this case , **the User token generation and the SAP API Management service is hosted in different sub-account**. The below picture depicts the landscape. </br>
+    ![](images/different_subaccount.png)</br>
+    Flow Summary:
+    
+    1. The User Logs in using the XSUAA service instance from origin sub-account. A token is generated in exchange of username and password . This token contains the User Principle. 
+    2. The Client requests the API Proxy endpoint(hosted on target sub-account) and passes the token as part of the header request
+    3. API Proxy verifies if the token is valid and requests Destination Service(on the origin account) to exchange the token
+    4. The token is passed to the Cloud Connector which queries the backend to present the response
+
+### Steps to enable the Flow
+#### Establish Trust between sub-accounts
+#### Generate and Upload Destination
+#### Configure API Proxy
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
