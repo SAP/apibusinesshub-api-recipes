@@ -1,0 +1,19 @@
+{
+    "samlbearerDestination":{
+
+        "targetIdpMetaLoc": "<location of the IDP metadata>",
+        "opProxyClientId":"<op proxy client id>",
+        "opProxyClientSecret":"<op proxy client secret>"
+    },
+    "userTokenExchangeDestination":{
+        "tokenServiceUrl":"<tokenServiceUrl>",
+        "opProxyClientId":"<op proxy client id>",
+        "opProxyClientSecret":"<op proxy client secret>"
+    },
+    "trustTwoSubaccounts":{
+        "originTrustLoc":"<location of Trust Certificate>",
+        "originIdpMetaLoc":"<location of IDP metadata>",
+        "originAuthUri":"<origin authrization uri>",
+        "originSubaccountId":"<sub-account id>"
+    }
+}

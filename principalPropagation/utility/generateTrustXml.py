@@ -3,6 +3,7 @@ from os import error
 import re
 import os.path
 import requests
+import json
 
 print("********************************")
 print("********************************")
@@ -17,20 +18,11 @@ generatedXml:str=outputFolder+"/upload_me_in_target_subaccount.xml"
 
 parser = OptionParser()
 
-parser.add_option('--originTrustLoc', type=str,dest="originTrustLoc",
-                    help='Relative Path to the downloaded file from the "Download Trust" button in sub-account(where User Token is generated)->Destination page')
-
-parser.add_option('--originIdpMetaLoc', type=str,dest="originIdpMetaLoc",
-help='Relative Path to the downloaded file from the sub-account(where User Token is generated)->Trust Configuration->SAML Metadata')
-
-parser.add_option('--originAuthUri', type=str,dest="originAuthUri",help='Is found within the XSUAA instance "uri" value')
-
-parser.add_option('--originSubaccountId', type=str,dest="originSubaccountId",help='sub-account(where User Token is generated)->Overview->Subaccount ID')
-
+parser.add_option('--configFile', type=str,dest="configFile",help='ConfigFile containing the configs')
 
 options, args = parser.parse_args()
 
-required="originTrustLoc originIdpMetaLoc originAuthUri originSubaccountId".split()
+required="configFile".split()
 
 for r in required:
     if options.__dict__[r] is None:
@@ -41,13 +33,19 @@ def readFile(fileName:str)->str:
     f = open(fileName, "r")
     return f.read()
 
+with open(os.path.join(my_path, options.configFile)) as f:
+  jsonObj = json.load(f)
+
+## TODO::validate json contents
+
+
 #########-----prepare--------#########
 authStr:str=".authentication."
 https:str="https://"
-if (authStr not in options.originAuthUri) or (https not in options.originAuthUri):
-    raise error("URI:"+options.originAuthUri+" has missing '.authentication.' or 'https://' therefore unable to extract subdomain and host")
+if (authStr not in jsonObj["trustTwoSubaccounts"]["originAuthUri"]) or (https not in jsonObj["trustTwoSubaccounts"]["originAuthUri"]):
+    raise error("URI:"+jsonObj["trustTwoSubaccounts"]["originAuthUri"]+" has missing '.authentication.' or 'https://' therefore unable to extract subdomain and host")
 
-subdomainWithHttps,landscapeHost=options.originAuthUri.split(authStr)
+subdomainWithHttps,landscapeHost=jsonObj["trustTwoSubaccounts"]["originAuthUri"].split(authStr)
 print("*Host="+landscapeHost)
 
 z,subdomain=subdomainWithHttps.split(https)
@@ -55,7 +53,7 @@ print("*Subdomain="+subdomain)
 
 
 ##########----Origin Certificate Operations starts-----#######
-certificateFilePath:str=os.path.join(my_path, options.originTrustLoc)
+certificateFilePath:str=os.path.join(my_path, jsonObj["trustTwoSubaccounts"]["originTrustLoc"])
 print("*Certificate is read from="+certificateFilePath)
 oTrustContent:str=readFile(certificateFilePath)
 #extract origin certificate
@@ -68,7 +66,7 @@ print("*Extracting Certificate passed successfully")
 ##########---Origin SAML Metadata Operations start---------################
 
 #download the metadata file
-idpMetaContentPath:str=os.path.join(my_path, options.originIdpMetaLoc)
+idpMetaContentPath:str=os.path.join(my_path, jsonObj["trustTwoSubaccounts"]["originIdpMetaLoc"])
 
 print("*SAML IDP Metadata is read from="+idpMetaContentPath)
 oIdpMetaContent:str=readFile(idpMetaContentPath)
@@ -122,7 +120,7 @@ templateContent=templateContent.replace("${S1_ENTITYID}",extractedEntityId)
 templateContent=templateContent.replace("${S1_CERTIFICATE}",oCertificate)
 
 #replace ${S1_SUBACCOUNT_ID}
-templateContent=templateContent.replace("${S1_SUBACCOUNT_ID}",options.originSubaccountId)
+templateContent=templateContent.replace("${S1_SUBACCOUNT_ID}",jsonObj["trustTwoSubaccounts"]["originSubaccountId"])
 
 #replace ${S1_LANDSCAPE_HOST}
 templateContent=templateContent.replace("${S1_LANDSCAPE_HOST}",landscapeHost)
