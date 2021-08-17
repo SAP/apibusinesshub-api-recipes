@@ -1,0 +1,15 @@
+<!-- configures how cached values should be written at runtime -->
+<PopulateCache async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+	<!-- configures a unique pointer to a piece of data stored in the cache -->
+	<CacheKey>
+		<KeyFragment>ppDestStates</KeyFragment>
+	</CacheKey>
+	<!-- specifies the cache where the data is to be stored -->
+	<Scope>Exclusive</Scope>
+	<ExpirySettings>
+		<!-- the number of seconds after which a cache entry should expire -->
+		<TimeoutInSec>300000</TimeoutInSec>
+	</ExpirySettings>
+	<!-- specifies the variable whose value should be written into cache -->
+	<Source>myVar.cacheString</Source>
+</PopulateCache>

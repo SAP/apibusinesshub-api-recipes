@@ -1,0 +1,10 @@
+<!-- configures how cached values should be retrieved at runtime -->
+<LookupCache async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+	<!-- configures a unique pointer to a piece of data stored in the cache -->
+	<CacheKey>
+		<KeyFragment>ppDestStates</KeyFragment>
+	</CacheKey>
+	<Scope>Exclusive</Scope>
+	<!-- the variable to which the cache entry should be assigned after it is looked up -->
+	<AssignTo>myVar.cacheResponseString</AssignTo>
+</LookupCache>

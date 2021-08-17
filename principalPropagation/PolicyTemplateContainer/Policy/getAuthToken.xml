@@ -1,0 +1,32 @@
+<!-- this policy lets you call to an external service from your API flow -->
+<ServiceCallout async="true" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+	<!-- The request that gets sent from the API proxy flow to the external service -->
+	
+	<Request>
+    	<Set>
+            <Headers>
+              <Header name="Authorization">Bearer {myVar.destination.resp.access_token}</Header>
+              <Header name="X-user-token">{myVar.incoming.loginToken}</Header>
+            </Headers>
+            <Verb>GET</Verb>
+      </Set>
+  </Request>
+	<!-- the variable into which the response from the external service should be stored -->
+	<Response>myVar.destination.resp.fromConfigDestination</Response>
+	<!-- The time in milliseconds that the Service Callout policy will wait for a response from the target before exiting. Default value is 120000 ms -->
+	<Timeout>30000</Timeout>
+	<HTTPTargetConnection>
+		<!-- The URL to the service being called -->
+		<URL>https://{myVar.destination.uri}/destination-configuration/v1/destinations/{myVar.destination.name}</URL>
+      <!-- The SSL reference to be used to access the https url -->
+ <SSLInfo>  
+    <Enabled>true</Enabled> 
+     <ClientAuthEnabled>false</ClientAuthEnabled> 
+     <KeyStore/> 
+     <KeyAlias/> 
+     <TrustStore/> 
+     <Ciphers/> 
+     <Protocols/> 
+ </SSLInfo> 
+	</HTTPTargetConnection>
+</ServiceCallout>

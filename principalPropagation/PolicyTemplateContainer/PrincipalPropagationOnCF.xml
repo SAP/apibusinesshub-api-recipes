@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><PolicyTemplateContainer>
+    <name>PrincipalPropagationOnCF</name>
+    <version>1</version>
+    <title>PrincipalPropagationOnCF</title>
+    <description>https://github.com/SAP/apibusinesshub-api-recipes/tree/master/principalPropagation
+</description>
+    <proxyEndPointxml>&lt;preFlow&gt;&lt;name&gt;PreFlow&lt;/name&gt;&lt;request&gt;&lt;isRequest&gt;true&lt;/isRequest&gt;&lt;steps&gt;&lt;step&gt;&lt;policy_name&gt;encodeCredForDest&lt;/policy_name&gt;&lt;condition&gt;myVar.destination.doQueryForFreshToken=="y"&lt;/condition&gt;&lt;sequence&gt;5&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;getAuthToken&lt;/policy_name&gt;&lt;condition&gt;&lt;/condition&gt;&lt;sequence&gt;8&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;verifyIncomingJwt&lt;/policy_name&gt;&lt;condition&gt;&lt;/condition&gt;&lt;sequence&gt;4&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;dcodejwt&lt;/policy_name&gt;&lt;condition&gt;&lt;/condition&gt;&lt;sequence&gt;1&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;extractFinalToken&lt;/policy_name&gt;&lt;condition&gt;&lt;/condition&gt;&lt;sequence&gt;9&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;prepareForRequest&lt;/policy_name&gt;&lt;condition&gt;&lt;/condition&gt;&lt;sequence&gt;10&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;getDestToken&lt;/policy_name&gt;&lt;condition&gt;myVar.destination.doQueryForFreshToken=="y"&lt;/condition&gt;&lt;sequence&gt;6&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;cacheToken&lt;/policy_name&gt;&lt;condition&gt;myVar.destination.doQueryForFreshToken=="y"&lt;/condition&gt;&lt;sequence&gt;11&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;setConfigJson&lt;/policy_name&gt;&lt;condition&gt;&lt;/condition&gt;&lt;sequence&gt;3&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;parseDestResp&lt;/policy_name&gt;&lt;condition&gt;myVar.destination.doQueryForFreshToken=="y"&lt;/condition&gt;&lt;sequence&gt;7&lt;/sequence&gt;&lt;/step&gt;&lt;step&gt;&lt;policy_name&gt;readFromCache&lt;/policy_name&gt;&lt;condition&gt;&lt;/condition&gt;&lt;sequence&gt;2&lt;/sequence&gt;&lt;/step&gt;&lt;/steps&gt;&lt;/request&gt;&lt;response&gt;&lt;isRequest&gt;false&lt;/isRequest&gt;&lt;steps&gt;&lt;/steps&gt;&lt;/response&gt;&lt;/preFlow&gt;&lt;postFlow&gt;&lt;name&gt;PostFlow&lt;/name&gt;&lt;request&gt;&lt;isRequest&gt;true&lt;/isRequest&gt;&lt;steps&gt;&lt;/steps&gt;&lt;/request&gt;&lt;response&gt;&lt;isRequest&gt;false&lt;/isRequest&gt;&lt;steps&gt;&lt;/steps&gt;&lt;/response&gt;&lt;/postFlow&gt;</proxyEndPointxml>
+    <life_cycle>
+        <changed_by>deep.ganguly@sap.com</changed_by>
+        <created_by>deep.ganguly@sap.com</created_by>
+    </life_cycle>
+    <targetEndPointxml>&lt;preFlow&gt;&lt;name&gt;PreFlow&lt;/name&gt;&lt;request&gt;&lt;isRequest&gt;true&lt;/isRequest&gt;&lt;steps&gt;&lt;/steps&gt;&lt;/request&gt;&lt;response&gt;&lt;isRequest&gt;false&lt;/isRequest&gt;&lt;steps&gt;&lt;step&gt;&lt;policy_name&gt;debugStates&lt;/policy_name&gt;&lt;condition&gt;myVar.debug.enable=true&lt;/condition&gt;&lt;sequence&gt;2&lt;/sequence&gt;&lt;/step&gt;&lt;/steps&gt;&lt;/response&gt;&lt;/preFlow&gt;&lt;postFlow&gt;&lt;name&gt;PostFlow&lt;/name&gt;&lt;request&gt;&lt;isRequest&gt;true&lt;/isRequest&gt;&lt;steps&gt;&lt;/steps&gt;&lt;/request&gt;&lt;response&gt;&lt;isRequest&gt;false&lt;/isRequest&gt;&lt;steps&gt;&lt;/steps&gt;&lt;/response&gt;&lt;/postFlow&gt;</targetEndPointxml>
+    <policies>
+        <policy type="ServiceCallout">getAuthToken</policy>
+        <policy type="ServiceCallout">getDestToken</policy>
+        <policy type="Javascript">debugStates</policy>
+        <policy type="DecodeJWT">dcodejwt</policy>
+        <policy type="PopulateCache">cacheToken</policy>
+        <policy type="VerifyJWT">verifyIncomingJwt</policy>
+        <policy type="LookupCache">readFromCache</policy>
+        <policy type="Javascript">prepareForRequest</policy>
+        <policy type="Javascript">setConfigJson</policy>
+        <policy type="ExtractVariable">extractFinalToken</policy>
+        <policy type="RaiseFault">defaultRaiseFaultPolicy</policy>
+        <policy type="ExtractVariable">parseDestResp</policy>
+        <policy type="BasicAuth">encodeCredForDest</policy>
+    </policies>
+    <fileResources>
+        <fileResource type="js">prepareRequest</fileResource>
+        <fileResource type="js">overrideResponseForDebug</fileResource>
+        <fileResource type="js">setConfigJson</fileResource>
+    </fileResources>
+</PolicyTemplateContainer>

@@ -1,0 +1,8 @@
+<VerifyJWT async="false" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+    <Algorithm>RS256</Algorithm>
+    <Source>myVar.incoming.loginToken</Source>
+    <PublicKey>
+         <Value ref="myVar.jwt.publicKey"/>
+    </PublicKey>
+    <Issuer ref="myVar.jwt.issuer"></Issuer>
+</VerifyJWT>

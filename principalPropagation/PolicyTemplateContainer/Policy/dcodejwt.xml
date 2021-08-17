@@ -1,0 +1,4 @@
+<!-- Decode JWT TOken -->
+<DecodeJWT async="false" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+<Source>request.header.Authorization</Source>
+</DecodeJWT>

@@ -1,0 +1,12 @@
+<!-- Extract content from the request or response messages, including headers, URI paths, JSON/XML payloads, form parameters, and query parameters -->
+<ExtractVariables async="true" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+	<!-- the source variable which should be parsed -->
+	<Source>myVar.destination.resp.fromConfigDestination</Source>
+
+<JSONPayload>
+    <Variable name="myVar.destination.resp.finalToken" type="string">
+        <JSONPath>$.authTokens[0].value</JSONPath>
+    </Variable>
+</JSONPayload>
+
+</ExtractVariables> 

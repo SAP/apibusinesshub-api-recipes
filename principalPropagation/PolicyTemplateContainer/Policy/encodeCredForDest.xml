@@ -1,0 +1,8 @@
+<BasicAuthentication async='true' continueOnError='false' enabled='true' xmlns='http://www.sap.com/apimgmt'>
+ 	<!-- Operation can be Encode or Decode -->
+	<Operation>Encode</Operation>
+	<IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<User ref='myVar.destination.clientId'></User>
+	<Password ref='myVar.destination.clientSecret'></Password>
+	<AssignTo createNew="false">myVar.destination.encodedBasicAuth</AssignTo>
+</BasicAuthentication>

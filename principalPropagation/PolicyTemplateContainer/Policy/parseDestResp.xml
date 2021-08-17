@@ -1,0 +1,17 @@
+<!-- Extract content from the request or response messages, including headers, URI paths, JSON/XML payloads, form parameters, and query parameters -->
+<ExtractVariables async="true" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+	<!-- the source variable which should be parsed -->
+	<Source>myVar.destination.resp.servInstaceAuth</Source>
+
+<JSONPayload>
+
+    <Variable name="myVar.destination.resp.access_token" type="string">
+        <JSONPath>$.access_token</JSONPath>
+    </Variable>
+    <Variable name="myVar.destination.resp.access_token_expiry" type="integer">
+        <JSONPath>$.expires_in</JSONPath>
+    </Variable>
+   
+</JSONPayload>
+    
+</ExtractVariables> 
