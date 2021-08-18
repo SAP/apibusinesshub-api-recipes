@@ -54,7 +54,7 @@
         <li><a href="#generate-and-upload-destination">Generate and Upload Destination</a></li>
         <li><a href="#configure-api-proxy">Configure API Proxy</a></li>
         <li><a href="#configure-policy">Configure Policy</a></li>
-        <li><a href="#consume-using-postman">Consume using Postman</a></li>
+        <li><a href="#consume">Consume </a></li>
       </ul>
         </li>
         <li><a href="#user-token-generation-and-sap-apim-is-hosted-on-the-different-cf-subaccount">User Token Generation and SAP APIM is hosted on the different CF subaccount</a>
@@ -62,8 +62,7 @@
          <li><a href="#establish-trust-between-sub-accounts">Establish Trust Between sub-accounts</a></li>
         <li><a href="#generate-and-upload-destination">Generate and Upload Destination</a></li>
         <li><a href="#configure-api-proxy">Configure API Proxy</a></li>
-        <li><a href="#consume-using-postman">Consume using Postman</a></li>
-
+        <li><a href="#consume">Consume</a></li>
       </ul>
         </li>
         <li><a href="#neo-cf-subaccount">NEO-CF Subaccount</a></li>
@@ -251,8 +250,22 @@ Within the Service Key of Destination -> take the 'clientid' parameter
 Within the Service Key of Destination -> take the 'clientsecret' parameter
 ```
 
-### Consume using Postman
+### Consume
 
+Request the XSUAA for the token inexchange of the userid and userpassword. In this case subdomain is : **blue**
+```
+curl --location --request POST 'https://<subdomainName>.authentication.<host>.com/oauth/token?grant_type=password'
+--header 'Authorization: Basic <base64Encoded of (xsuaaClientId:xsuaaClientSecret)>’
+--header 'Content-Type: application/x-www-form-urlencoded'
+--data-urlencode 'username=<user id>’
+--data-urlencode 'password=<user password>’
+```
+Request the API Proxy endpoint
+
+```
+curl --location --request GET 'https://<API_PROXY endpoint>'
+--header 'Authorization:<access_token from above request>'
+```
 
 
 ## User Token Generation and SAP APIM is hosted on the different CF subaccount
@@ -278,9 +291,17 @@ Perform the steps mentioned [here](utility/readme.md#generate-destination-for-oa
 #### Configure API Proxy
 Perform the steps mentioned in the [Configure Policy](#configure-policy) . The XSUAA and the Destination Service keys are taken from the origin sub-account , in this case subaccount: **red**
 
-### Consume using Postman
+### Consume
+
+Request the XSUAA for the token inexchange of the userid and userpassword. In this case subdomain is : **red**
+Refer [here](#consume)
 
 
+# External Links
+[Api-management-mini-security-series](https://blogs.sap.com/2020/06/28/sap-cloud-platform-api-management-mini-security-series/)
+
+
+# Contributions
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
