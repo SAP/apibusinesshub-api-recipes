@@ -54,6 +54,7 @@
         <li><a href="#generate-and-upload-destination">Generate and Upload Destination</a></li>
         <li><a href="#configure-api-proxy">Configure API Proxy</a></li>
         <li><a href="#configure-policy">Configure Policy</a></li>
+        <li><a href="#consume-using-postman">Consume using Postman</a></li>
       </ul>
         </li>
         <li><a href="#user-token-generation-and-sap-apim-is-hosted-on-the-different-cf-subaccount">User Token Generation and SAP APIM is hosted on the different CF subaccount</a>
@@ -61,6 +62,8 @@
          <li><a href="#establish-trust-between-sub-accounts">Establish Trust Between sub-accounts</a></li>
         <li><a href="#generate-and-upload-destination">Generate and Upload Destination</a></li>
         <li><a href="#configure-api-proxy">Configure API Proxy</a></li>
+        <li><a href="#consume-using-postman">Consume using Postman</a></li>
+
       </ul>
         </li>
         <li><a href="#neo-cf-subaccount">NEO-CF Subaccount</a></li>
@@ -70,7 +73,6 @@
      <li>
       <a href="#consumption">Consumption</a>
         <ul>
-        <li><a href="#postman-collection">Postman Collection</a></li>
         <li><a href="#cf-apps">CF Apps</a></li>
         <li><a href="#ui5-application">UI5 Application</a></li>
       </ul>
@@ -84,7 +86,7 @@
 ## About
 
 * [Overview of Principal Propagation ](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e2cbb48def4342048362039cc157b12e.html)
-* This documentation depicts the step-by-step configurations required to setup Principal Propagation for the following scenarios within the Cloud Foundry capability SAP API Management under the SAP Integration Suite in SAP BTP Platform.
+* This documentation depicts the step-by-step configurations required to setup Principal Propagation forncenarios within the Cloud Foundry capability SAP API Management under the SAP Integration Suite in SAP BTP Platform.
 * A single API Proxy shall be configured to provide for Principal Propagation from the same and different sub-accounts within CF runtime of SAP APIM
 * The Configurations of the Cloud Connector and the backend systems are left out of scope.
 * The Configurations of SAP API Management applies to Prod,Canary,Trial landscape,this document only depicts the Trial setups. The configurations remain same for other landscapes.
@@ -249,6 +251,9 @@ Within the Service Key of Destination -> take the 'clientid' parameter
 Within the Service Key of Destination -> take the 'clientsecret' parameter
 ```
 
+### Consume using Postman
+
+
 
 ## User Token Generation and SAP APIM is hosted on the different CF subaccount
 
@@ -272,6 +277,9 @@ Origin subaccount : **red** </br>
 Perform the steps mentioned [here](utility/readme.md#generate-destination-for-oauth2samlbearerassertion) to generate and upload the Destination
 #### Configure API Proxy
 Perform the steps mentioned in the [Configure Policy](#configure-policy) . The XSUAA and the Destination Service keys are taken from the origin sub-account , in this case subaccount: **red**
+
+### Consume using Postman
+
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
