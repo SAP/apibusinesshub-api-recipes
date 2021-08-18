@@ -16,12 +16,33 @@
     </li>
     <li>
       <a href="#prerequisites">Prerequisites</a>
+       <ul>
+        <li><a href="#activate-trial">Activate Trial</a></li>
+        <li><a href="#create-subaccounts">Create subaccounts</a></li>
+        <li><a href="#enable-cloud-foundry">Enable Cloud Foundry</a></li>
+        <li><a href="#configure-subaccount-blue">Configure subaccount:blue</a>
+       <ul>
+        <li><a href="#configure-entitlements">Configure Entitlements</a></li>
+        <li><a href="#service-instance-destination">Service Instance for Destination</a></li>
+        <li><a href="#service-instance-xsuaa">Service Instance for XSUAA</a></li>
+        <li><a href="#service-instance-opproxy">Service Instance for On-premise-connectivity</a></li>
+      </ul>
+         </li>
+        <li><a href="#configure-subaccount-red">Configure subaccount:red</a>
+          <ul>
+        <li><a href="#service-instance-destination">Service Instance for Destination</a></li>
+        <li><a href="#service-instance-xsuaa">Service Instance for XSUAA</a></li>
+      </ul>
+         </li>
+        <li><a href="#clone-repository">Clone Repository</a></li>
+      </ul>
     </li>
     <li>
       <a href="#prepare">Prepare</a>
        <ul>
         <li><a href="#create-api-provider">Create API Provider</a></li>
         <li><a href="#create-api-proxy">Create API Proxy</a></li>
+        <li><a href="#import-policy-template">Import Policy Template</a></li>
       </ul>
     </li>
     <li>
@@ -68,46 +89,75 @@
 
 
 
-<!-- GETTING STARTED -->
+<!-- Prerequisites -->
 ## Prerequisites
-
-1. [Activate your Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-2. Create Two sub-accounts within the Trial Global account </br>
+### Activate Trial 
+ [Activate your Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+### Create Subaccounts
+Create Two sub-accounts within the Trial Global account </br>
   a. Sub-account name: **red** , Sub-domain name : red , Region of choice </br>
   ![Blue sub-account creation](./images/red_creation.png)</br>
   b. Sub-account name: **blue** , Sub-domain name : blue, Region of choice </br>
   ![Red sub-account creation](./images/blue_creation.png)</br>
-
-3. In sub-account:**blue** enable the Integration Suite and add SAP API Management cabaility by [Setup Integration Suite Trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html)
-4. Enable Cloud Foundry in both sub-accounts </br>
-5. In sub-account:**blue** </br>
-  a. Click on Entitlements-> Configure Entitlements -> Add Service Plans-> API Management, API Portal , enable and save </br> **on-premise connectivity** </br> **apiportal-apiaccess** </br></br>
-    ![Entitlement](./images/entitle_apim_plans.png)</br>
-  b. Enable </br> Service Instances: **API Management , API Portal** </br> Plan: **on-premise-connectivity** </br> Instance Name: **blueop** </br></br>
-    ![](images/blue_op_proxy.png)</br>
-  c. Enable </br> Service Instances: **Authorization and Trust Management Service** </br> Plan: **application** </br> Instance Name: **bluexsuaa** </br></br>
-    ![](images/blue_xsuaa.png)</br>
-  d. Enable </br> Service Instances: **Destination** </br> Plan: **lite** </br> Instance Name: **bluedest** </br></br>
-    ![](images/blue_dest.png)</br>
-  e. Create Service Keys for **blueop** , **bluexsuaa** , **bluedest** respectively </br>
   
-6. In sub-account:**red** </br>
+### Enable Integration Suite
+In sub-account:**blue** enable the Integration Suite and add SAP API Management cabaility by [Setup Integration Suite Trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html)
+### Enable Cloud Foundry 
+Enable Cloud Foundry in both sub-accounts </br>
+
+### Configure subaccount blue
+In sub-account:**blue** </br>
+
+#### Configure Entitlements
+Click on Entitlements-> Configure Entitlements -> Add Service Plans-> API Management, API Portal , enable and save </br> **on-premise connectivity** </br> **apiportal-apiaccess** </br></br>
+    ![Entitlement](./images/entitle_apim_plans.png)</br>
+    
+#### Service Instance OPProxy
+Enable </br> Service Instances: **API Management , API Portal** </br> Plan: **on-premise-connectivity** </br> Instance Name: **blueop** </br></br>
+    ![](images/blue_op_proxy.png)</br>
+    
+#### Service Instance XSUAA
+Enable </br> Service Instances: **Authorization and Trust Management Service** </br> Plan: **application** </br> Instance Name: **bluexsuaa** </br></br>
+    ![](images/blue_xsuaa.png)</br>
+    
+#### Service Instance Destination
+Enable </br> Service Instances: **Destination** </br> Plan: **lite** </br> Instance Name: **bluedest** </br></br>
+    ![](images/blue_dest.png)</br>
+    
+#### Generate Service keys
+Create Service Keys for **blueop** , **bluexsuaa** , **bluedest** respectively </br>
+
+### Configure subaccount red
+In sub-account:**red** </br>
   a. Enable </br> Service Instances: **Authorization and Trust Management Service** </br> Plan: **application** </br> Instance Name: **redxsuaa** </br></br>
     ![](images/red_xsuaa.png)</br>
   b. Enable </br> Service Instances: **Destination** </br> Plan: **lite** </br> Instance Name: **reddest** </br></br>
     ![](images/red_dest.png)</br>
   e. Create Service Keys for **redxsuaa** , **reddest** respectively </br>
-  
-7. Clone the repo
+### Clone Repository
+Clone the repo
    ```sh
    git clone https://github.com/SAP/apibusinesshub-api-recipes.git
    ```
 
 
 ## Prepare
+Within the API Portal Application do the following
 ### Create API Provider
+Navigate to Configure -> API Providers -> Create  </br>
+**Host** : Virtual Host of the backend system configured within Cloud Connector </br>
+**Port** : Port of the Virtual Host configured within Cloud Connector </br>
+![](images/create_api_provider.png)</br>
 
 ### Create API Proxy
+Navigate to Develop -> APIs-> Create
+![](images/create_api.png)</br>
+
+
+### Import Policy Template
+Navigate to Develop -> Policy Templates -> Import -> Browse </br>
+Import the Policy Template avialble within the [cloned repository](#clone-repository) path: </br> 
+/apibusinesshub-api-recipes/principalPropagation/PrincipalPropagationOnCF
 
 <!-- Setup and Configuration -->
 ## Setup and Configuration
@@ -149,4 +199,3 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
