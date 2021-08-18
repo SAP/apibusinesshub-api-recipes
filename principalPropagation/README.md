@@ -49,13 +49,14 @@
     <li>
       <a href="#setup-and-configuration">Setup and Configuration</a>
       <ul>
-        <li><a href="#own-CF-sub-account">Own CF Subaccount</a>
+        <li><a href="#user-token-generation-and-sap-apim-is-hosted-on-the-same-cf-subaccount">User Token Generation and SAP APIM is hosted on the same CF subaccount</a>
         <ul>
-        <li><a href="#own-CF-sub-account">Generate and Upload Destination</a></li>
+        <li><a href="#generate-and-upload-destination">Generate and Upload Destination</a></li>
         <li><a href="#configure-api-proxy">Configure API Proxy</a></li>
+        <li><a href="#configure-policy">Configure Policy</a></li>
       </ul>
         </li>
-        <li><a href="#cf-cf-subaccount">CF-CF Subaccount</a>
+        <li><a href="#user-token-generation-and-sap-apim-is-hosted-on-the-different-cf-subaccount">User Token Generation and SAP APIM is hosted on the different CF subaccount</a>
          <ul>
          <li><a href="#establish-trust-between-sub-accounts">Establish Trust Between sub-accounts</a></li>
         <li><a href="#generate-and-upload-destination">Generate and Upload Destination</a></li>
@@ -110,7 +111,7 @@ Enable Cloud Foundry in both sub-accounts </br>
 In sub-account:**blue** </br>
 
 #### Configure Entitlements
-Click on Entitlements-> Configure Entitlements -> Add Service Plans-> API Management, API Portal , enable and save </br> **on-premise connectivity** </br> **apiportal-apiaccess** </br></br>
+Click on *Entitlements-> Configure Entitlements -> Add Service Plans-> API Management, API Portal , enable and save* </br> **on-premise connectivity** </br> **apiportal-apiaccess** </br></br>
     ![Entitlement](./images/entitle_apim_plans.png)</br>
     
 #### Service Instance OPProxy
@@ -145,31 +146,31 @@ Clone the repo
 ## Prepare
 Within the API Portal Application do the following
 ### Create API Provider
-Navigate to Configure -> API Providers -> Create  </br>
+Navigate to *Configure -> API Providers -> Create*  </br>
 **Host** : Virtual Host of the backend system configured within Cloud Connector </br>
-**Port** : Port of the Virtual Host configured within Cloud Connector </br>
+**Port** : Port of the Virtual Host configured within Cloud Connector
 ![](images/create_api_provider.png)</br>
 
 ### Create API Proxy
-Navigate to Develop -> APIs-> Create
+Navigate to *Develop -> APIs-> Create*
 ![](images/create_api.png)</br>
 
 
 ### Import Policy Template
-Navigate to Develop -> Policy Templates -> Import -> Browse </br>
+Navigate to *Develop -> Policy Templates -> Import -> Browse* </br>
 Import the Policy Template avialble within the [cloned repository](#clone-repository) path: </br> 
-/apibusinesshub-api-recipes/principalPropagation/PrincipalPropagationOnCF
+*/apibusinesshub-api-recipes/principalPropagation/PrincipalPropagationOnCF*
 
 ### Apply Policy Template to API Proxy
-Develop->APIs ->Click on the SalesOrder API created above and follow<br>
-Policy ->Edit ->Policy Template ->Apply ->Check PrincipalPropagationOnCF ->Apply ->Update ->Save ->Deploy </br>
-The policies should be applied </br>
+*Develop->APIs ->Click on the SalesOrder API created above and follow<br>
+Policy ->Edit ->Policy Template ->Apply ->Check PrincipalPropagationOnCF ->Apply ->Update ->Save ->Deploy </br>*
+The below policies should be applied </br></br>
 ![](images/policies_applied.png)
 
 <!-- Setup and Configuration -->
 ## Setup and Configuration
 
-### Own CF Subaccount
+### User Token Generation and SAP APIM is hosted on the same CF subaccount
 
 In this case , **the User token generation and the SAP API Management service is hosted within the same sub-account**. The below picture depicts the landscape. </br>
     ![](images/same_subaccount.png)</br>
@@ -182,11 +183,75 @@ In this case , **the User token generation and the SAP API Management service is
     
 ### Steps to enable the Flow
 #### Generate and Upload Destination
-Target subaccount : blue </br>
+Target subaccount : **blue** </br>
 Perform the steps mentioned [here](utility/readme.md#generate-destination-for-oauth2usertokenexchange) to generate and upload the Destination
+
 #### Configure API Proxy
 
-## CF-CF subaccount 
+Perform the steps mentioned in the [Configure Policy](#configure-policy) . The XSUAA and the Destination Service keys are taken from the target sub-account , in this case subaccount: **blue** </br>
+
+
+#### Configure Policy  
+
+Naigate to the *API Proxy -> Policy Editor -> Scripts -> setConfig.js* . The configObj contains the below configurations . The parameters of the configObj needs to be filled for the flow
+```
+var configObj = {
+  "enableDebug": false,
+  "invalidateCache": false,
+  "accounts": {
+    "dummyname": {
+      "issuer": "<sample>",
+      "publicKey": "<sample>",
+      "destinationName": "<sample>",
+      "destinationUri": "<sample>",
+      "destinationAuthEndpoint": "<sample>",
+      "destinationClientId": "<sample>",
+      "destinationClientSecret": "<sample>"
+    }
+  }
+}
+```
+An **account** in the **configObj.accounts** above is a subaccount where token generation happens. In case the API Proxy expects token from multiple subaccounts within CF, each of these subaccounts need to be added within configObj.accounts. By this mechanism the single API Proxy supports principal propagation of users from  multiple CF subaccounts as well as itself.
+
+
+**issuer** <br>
+The issuer of the Token . Can be found by decrpyting the generated token and taking the value of **iss** key,also
+```
+Within Service Key of XSUAA -> take the 'url' parameter and add /oauth/token . Below is the format required
+https://<subdomain>.authentication.<host>.com/oauth/token
+```
+**publicKey**
+```
+Within Service Key of XSUAA -> take the 'verificationkey' parameter.Below is the format required
+-----BEGIN PUBLIC KEY-----****-----END PUBLIC KEY-----
+```
+**destinationName**
+```
+The Name of the Destination uploaded in the previous step
+```
+**destinationUri**
+```
+Within the Service Key of Destination -> take the 'uri' parameter without the 'https://'. Below is the format required
+destination-configuration.cfapps.<data_center>.<host>.com
+```
+**destinationAuthEndpoint**
+```
+Within the Service Key of Destination -> take the  'url' parameter without the 'https://'. Below is the format required
+<subdomain>.authentication.<host>.com
+```
+**destinationClientId**
+```
+Within the Service Key of Destination -> take the 'clientid' parameter
+```
+
+**destinationClientSecret**
+```
+Within the Service Key of Destination -> take the 'clientsecret' parameter
+```
+
+
+## User Token Generation and SAP APIM is hosted on the different CF subaccount
+
 In this case , **the User token generation and the SAP API Management service is hosted in different sub-account**. The below picture depicts the landscape. </br>
     ![](images/different_subaccount.png)</br>
     Flow Summary:
@@ -198,14 +263,15 @@ In this case , **the User token generation and the SAP API Management service is
 
 ### Steps to enable the Flow
 #### Establish Trust between sub-accounts
-Target subaccount : blue </br>
-Origin subaccount : red </br>
+Target subaccount : **blue** </br>
+Origin subaccount : **red** </br>
 Perform the steps mentioned [here](utility/readme.md#generate-trustxml) to generate the Trust XML
 #### Generate and Upload Destination
-Target subaccount : blue </br>
-Origin subaccount : red </br>
+Target subaccount : **blue** </br>
+Origin subaccount : **red** </br>
 Perform the steps mentioned [here](utility/readme.md#generate-destination-for-oauth2samlbearerassertion) to generate and upload the Destination
 #### Configure API Proxy
+Perform the steps mentioned in the [Configure Policy](#configure-policy) . The XSUAA and the Destination Service keys are taken from the origin sub-account , in this case subaccount: **red**
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
