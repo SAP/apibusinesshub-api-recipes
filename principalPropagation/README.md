@@ -43,6 +43,7 @@
         <li><a href="#create-api-provider">Create API Provider</a></li>
         <li><a href="#create-api-proxy">Create API Proxy</a></li>
         <li><a href="#import-policy-template">Import Policy Template</a></li>
+        <li><a href="#apply-policy-template-to-api-proxy">Apply Policy Template to API Proxy</a></li>
       </ul>
     </li>
     <li>
@@ -159,6 +160,12 @@ Navigate to Develop -> Policy Templates -> Import -> Browse </br>
 Import the Policy Template avialble within the [cloned repository](#clone-repository) path: </br> 
 /apibusinesshub-api-recipes/principalPropagation/PrincipalPropagationOnCF
 
+### Apply Policy Template to API Proxy
+Develop->APIs ->Click on the SalesOrder API created above and follow<br>
+Policy ->Edit ->Policy Template ->Apply ->Check PrincipalPropagationOnCF ->Apply ->Update ->Save ->Deploy </br>
+The policies should be applied </br>
+![](images/policies_applied.png)
+
 <!-- Setup and Configuration -->
 ## Setup and Configuration
 
@@ -175,6 +182,8 @@ In this case , **the User token generation and the SAP API Management service is
     
 ### Steps to enable the Flow
 #### Generate and Upload Destination
+Target subaccount : blue </br>
+Perform the steps mentioned [here](utility/readme.md#generate-destination-for-oauth2usertokenexchange) to generate and upload the Destination
 #### Configure API Proxy
 
 ## CF-CF subaccount 
@@ -189,7 +198,13 @@ In this case , **the User token generation and the SAP API Management service is
 
 ### Steps to enable the Flow
 #### Establish Trust between sub-accounts
+Target subaccount : blue </br>
+Origin subaccount : red </br>
+Perform the steps mentioned [here](utility/readme.md#generate-trustxml) to generate the Trust XML
 #### Generate and Upload Destination
+Target subaccount : blue </br>
+Origin subaccount : red </br>
+Perform the steps mentioned [here](utility/readme.md#generate-destination-for-oauth2samlbearerassertion) to generate and upload the Destination
 #### Configure API Proxy
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
