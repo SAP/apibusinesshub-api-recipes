@@ -20,7 +20,7 @@
         <li><a href="#activate-trial">Activate Trial</a></li>
         <li><a href="#create-subaccounts">Create subaccounts</a></li>
         <li><a href="#enable-cloud-foundry">Enable Cloud Foundry</a></li>
-        <li><a href="#configure-subaccount-blue">Configure subaccount:blue</a>
+        <li><a href="#configure-subaccount-target">Configure subaccount:target</a>
        <ul>
         <li><a href="#configure-entitlements">Configure Entitlements</a></li>
         <li><a href="#service-instance-destination">Service Instance for Destination</a></li>
@@ -28,7 +28,7 @@
         <li><a href="#service-instance-opproxy">Service Instance for On-premise-connectivity</a></li>
       </ul>
          </li>
-        <li><a href="#configure-subaccount-red">Configure subaccount:red</a>
+        <li><a href="#configure-subaccount-origin">Configure subaccount:origin</a>
           <ul>
         <li><a href="#service-instance-destination">Service Instance for Destination</a></li>
         <li><a href="#service-instance-xsuaa">Service Instance for XSUAA</a></li>
@@ -65,8 +65,9 @@
         <li><a href="#consume">Consume</a></li>
       </ul>
         </li>
-        <li><a href="#neo-cf-subaccount">NEO-CF Subaccount</a></li>
-        <li><a href="#azure-active-directory">Azure Active Directory</a></li>
+        <li><a href="#neo-cf-subaccount">User Token generation on NEO, APIM hosted on CF</a></li>
+        <li><a href="#azure-active-directory">User Token generation on Azure Active Directory</a></li>
+        <li><a href="#azure-active-directory">User Token generation on SAP IAS</a></li>
       </ul>
     </li>
      <li>
@@ -98,9 +99,9 @@
  [Activate your Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 ### Create Subaccounts
 Create Two sub-accounts within the Trial Global account </br>
-  a. Sub-account name: **red** , Sub-domain name : red , Region of choice </br>
+  a. Sub-account name: **red** , Sub-domain name : red , Region of choice </br> This will be the **origin** subaccount as token generation happens here </br></br> 
   ![Blue sub-account creation](./images/red_creation.png)</br>
-  b. Sub-account name: **blue** , Sub-domain name : blue, Region of choice </br>
+  b. Sub-account name: **blue** , Sub-domain name : blue, Region of choice </br> This is the **target** subaccount as APIM is hosted here </br></br>
   ![Red sub-account creation](./images/blue_creation.png)</br>
   
 ### Enable Integration Suite
@@ -108,7 +109,7 @@ In sub-account:**blue** enable the Integration Suite and add SAP API Management 
 ### Enable Cloud Foundry 
 Enable Cloud Foundry in both sub-accounts </br>
 
-### Configure subaccount blue
+### Configure subaccount target
 In sub-account:**blue** </br>
 
 #### Configure Entitlements
@@ -130,7 +131,7 @@ Enable </br> Service Instances: **Destination** </br> Plan: **lite** </br> Insta
 #### Generate Service keys
 Create Service Keys for **blueop** , **bluexsuaa** , **bluedest** respectively </br>
 
-### Configure subaccount red
+### Configure subaccount origin
 In sub-account:**red** </br>
   a. Enable </br> Service Instances: **Authorization and Trust Management Service** </br> Plan: **application** </br> Instance Name: **redxsuaa** </br></br>
     ![](images/red_xsuaa.png)</br>
