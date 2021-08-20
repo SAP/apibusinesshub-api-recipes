@@ -65,9 +65,9 @@
         <li><a href="#consume">Consume</a></li>
       </ul>
         </li>
-        <li><a href="#neo-cf-subaccount">User Token generation on NEO, APIM hosted on CF</a></li>
-        <li><a href="#azure-active-directory">User Token generation on Azure Active Directory</a></li>
-        <li><a href="#azure-active-directory">User Token generation on SAP IAS</a></li>
+        <li><a href="#user-token-generation-on-neo-and-apim-hosted-on-cf">User Token generation on NEO and APIM hosted on CF</a></li>
+        <li><a href="#user-token-generation-on-azure-active-directory">User Token generation on Azure Active Directory</a></li>
+        <li><a href="#user-token-generation-on-sap-ias">User Token generation on SAP IAS</a></li>
       </ul>
     </li>
      <li>
@@ -195,13 +195,13 @@ Perform the steps mentioned in the [Configure Policy](#configure-policy) . The X
 
 #### Configure Policy  
 
-Naigate to the *API Proxy -> Policy Editor -> Scripts -> setConfig.js* . The configObj contains the below configurations . The parameters of the configObj needs to be filled for the flow
+Naigate to the *API Proxy -> Policy Editor -> Scripts -> setConfig.js* . The configObj contains the below configurations . The values of the configObj needs to be filled for the flow
 ```
 var configObj = {
   "enableDebug": false,
   "invalidateCache": false,
   "accounts": {
-    "dummyname": {
+    "<myaccountName>": {
       "issuer": "<sample>",
       "publicKey": "<sample>",
       "destinationName": "<sample>",
@@ -219,12 +219,12 @@ An **account** in the **configObj.accounts** above is a subaccount where token g
 **issuer** <br>
 The issuer of the Token . Can be found by decrpyting the generated token and taking the value of **iss** key,also
 ```
-Within Service Key of XSUAA -> take the 'url' parameter and add /oauth/token . Below is the format required
+Within Service Key of XSUAA -> take the value of 'url' key and add /oauth/token . Below is the format required
 https://<subdomain>.authentication.<host>.com/oauth/token
 ```
 **publicKey**
 ```
-Within Service Key of XSUAA -> take the 'verificationkey' parameter.Below is the format required
+Within Service Key of XSUAA -> take the value of 'verificationkey' key.Below is the format required
 -----BEGIN PUBLIC KEY-----****-----END PUBLIC KEY-----
 ```
 **destinationName**
@@ -233,22 +233,22 @@ The Name of the Destination uploaded in the previous step
 ```
 **destinationUri**
 ```
-Within the Service Key of Destination -> take the 'uri' parameter without the 'https://'. Below is the format required
+Within the Service Key of Destination -> take the value of 'uri' key without the 'https://'. Below is the format required
 destination-configuration.cfapps.<data_center>.<host>.com
 ```
 **destinationAuthEndpoint**
 ```
-Within the Service Key of Destination -> take the  'url' parameter without the 'https://'. Below is the format required
+Within the Service Key of Destination -> take the  value of 'url' key without the 'https://'. Below is the format required
 <subdomain>.authentication.<host>.com
 ```
 **destinationClientId**
 ```
-Within the Service Key of Destination -> take the 'clientid' parameter
+Within the Service Key of Destination -> take the value of 'clientid' key
 ```
 
 **destinationClientSecret**
 ```
-Within the Service Key of Destination -> take the 'clientsecret' parameter
+Within the Service Key of Destination -> take the value of 'clientsecret' key
 ```
 
 ### Consume
@@ -297,6 +297,14 @@ Perform the steps mentioned in the [Configure Policy](#configure-policy) . The X
 Request the XSUAA for the token inexchange of the userid and userpassword. In this case subdomain is : **red**
 Refer [here](#consume)
 
+# User Token generation on NEO and APIM hosted on CF
+coming soon
+
+# User Token generation on Azure Active Directory
+coming soon
+
+# User Token generation on SAP IAS
+coming soon 
 
 # External Links
 [Api-management-mini-security-series](https://blogs.sap.com/2020/06/28/sap-cloud-platform-api-management-mini-security-series/)
