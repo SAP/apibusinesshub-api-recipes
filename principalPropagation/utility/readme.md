@@ -88,7 +88,7 @@ Relative location of the file downloaded from
 ```bash
 /usr/bin/python3 <path>/generateDestination_for_samlbearer.py --config ./config.json
 ```
-The config.json takes the following parameter
+The config.json takes the following json
 ```
 {
   "samlbearerDestination": {
@@ -121,11 +121,11 @@ Relative location of the file downloaded from
 
 - The output trust file is generated in
 
-> ./out/upload_this_destination_in_target_account.xml
+> ./out/upload_this_destination_in_origin_account.xml
 
 - The output file is to uploaded in the
 
-> Target sub-account->Destinations-> Import button. Import the Destination , name the Destination and save
+> Origin sub-account->Destinations-> Import button. Import the Destination , name the Destination and save
 
 # Generate Destination for OAuth2UserTokenExchange
 -  Navigate to the *utility* folder
@@ -135,7 +135,7 @@ Relative location of the file downloaded from
 ```bash
 /usr/bin/python3 <path>/generateDestination_for_usertoken.py --config ./config.json
 ```
-The config.json takes the following parameter
+The config.json takes the following json
 ```
 {
   "userTokenExchangeDestination": {
