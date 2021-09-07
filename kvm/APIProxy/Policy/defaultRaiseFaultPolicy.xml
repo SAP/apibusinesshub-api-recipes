@@ -1,0 +1,9 @@
+<RaiseFault async="false" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+	<FaultResponse>
+		<Set>
+			<StatusCode>405</StatusCode>
+			<ReasonPhrase>Method Not Allowed</ReasonPhrase>
+		</Set>
+	</FaultResponse>
+	<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+</RaiseFault>

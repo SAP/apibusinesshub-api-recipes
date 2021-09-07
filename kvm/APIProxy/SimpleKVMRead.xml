@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy xmlns="http://www.sap.com/apimgmt">
+    <name>SimpleKVMRead</name>
+    <title>SimpleKVMRead</title>
+    <description>&lt;p&gt;&lt;/p&gt;</description>
+    <isVersioned>false</isVersioned>
+    <service_code>REST</service_code>
+    
+    <APIState>Active</APIState>
+    <life_cycle>
+        <changed_by>deep.ganguly@sap.com</changed_by>
+        <created_by>deep.ganguly@sap.com</created_by>
+    </life_cycle>
+    <proxyEndPoints>
+        <proxyEndPoint>
+            <proxyEndPointName>default</proxyEndPointName>
+            <apiResourceName>SWAGGER_JSON</apiResourceName>
+        </proxyEndPoint>
+    </proxyEndPoints>
+    <targetEndPoints>
+        <targetEndPoint>default</targetEndPoint>
+    </targetEndPoints>
+    <policies>
+        <policy type="RaiseFault">defaultRaiseFaultPolicy</policy>
+        <policy type="KeyValueMapOperations">readFromKvm</policy>
+        <policy type="AssignMessage">assignPrivateMessage</policy>
+        <policy type="KeyValueMapOperations">readFromEncryptedKvm</policy>
+    </policies>
+    <fileResources/>
+</APIProxy>

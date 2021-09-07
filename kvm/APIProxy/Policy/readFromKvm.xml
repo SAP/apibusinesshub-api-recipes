@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Key/value pairs can be stored, retrieved, and deleted from named existing maps by configuring this policy by specifying PUT, GET, or DELETE operations -->
+<!-- mapIdentifier refers to the name of the key value map -->
+<!-- Don't use Key Value Maps to store your logs as this can impact API Proxy runtime flow -->
+<KeyValueMapOperations xmlns="http://www.sap.com/apimgmt" mapIdentifier="MyKvm" async="true" continueOnError="false" enabled="true">
+   <!-- PUT stores the key value pair mentioned inside the element -->
+   <Get assignTo="request.header.kvm_unEncryptedValue">
+      <Key>
+         <Parameter>dummyKvmKey</Parameter>
+      </Key>
+   </Get>
+   <!-- the scope of the key value map. Valid values are environment, organization, apiproxy and policy -->
+   <Scope>environment</Scope>
+</KeyValueMapOperations>

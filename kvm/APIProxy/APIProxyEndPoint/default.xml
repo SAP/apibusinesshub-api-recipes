@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndPoint default="true" xmlns="http://www.sap.com/apimgmt">
+    <name>default</name>
+    <base_path>/kvmread</base_path>
+    <properties/>
+    <routeRules>
+        <routeRule>
+            <name>default</name>
+            <targetEndPointName>default</targetEndPointName>
+            <sequence>1</sequence>
+            <faultRules/>
+        </routeRule>
+    </routeRules>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps>
+                <step>
+                    <policy_name>readFromKvm</policy_name>
+                    <condition></condition>
+                    <sequence>1</sequence>
+                </step>
+                <step>
+                    <policy_name>readFromEncryptedKvm</policy_name>
+                    <condition></condition>
+                    <sequence>2</sequence>
+                </step>
+                <step>
+                    <policy_name>assignPrivateMessage</policy_name>
+                    <condition></condition>
+                    <sequence>3</sequence>
+                </step>
+            </steps>
+        </request>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+    </postFlow>
+    <conditionalFlows/>
+</ProxyEndPoint>
